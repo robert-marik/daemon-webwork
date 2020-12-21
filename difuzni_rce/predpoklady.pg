@@ -58,7 +58,7 @@ Dvourozměrná obecná difuzní rovnice (popisující nestacionární děj, umo�
 ```]
 pokud je rovnice napsána v soustavě souřadnic, ve které je difuzní matice diagonální. Tuto rovnici je možné dále zjednodušit vynecháním některých členů, podle specifiky úlohy. Například úloha může být stacionární, bez přítomnosti zdrojů, s izotropním, homogenním či lineárním materiálem a každý z těchto předpokladů se na rovnici podepíše jistým způsobem, ať už sám o sobě, nebo v kombinaci s dalšími předpoklady). 
 
-*Instrukce:* Pro následující speciální případy difuzní rovnice vyznačte předpoklady nutné pro transformaci do daného tvaru. Do volného políčka napište písmeno "n" nebo "a" podle toho, zda je předpoklad nutný či nikoliv. (Bez uvozovek, na velikosti písma nezáleží.)
+*Instrukce:* Pro následující speciální případy difuzní rovnice vyznačte předpoklady související s transformaci difuzní rovnice do daného tvaru. Do volného políčka napište písmeno "n" nebo "a" podle toho, zda je předpoklad relevantní pro danou rovnici či nikoliv. (Bez uvozovek, na velikosti písma nezáleží.)
 
 -------
 
@@ -67,6 +67,9 @@ pokud je rovnice napsána v soustavě souřadnic, ve které je difuzní matice d
 +
 \frac{\partial }{\partial y}\left(D_y\frac {\partial u}{\partial y}\right)
 ```]
+
+
+Vepište a nebo n pokud se jedná o předpoklad umožňující zjednodušení obecné difuzní rovnice do výše uvedeného tvaru.
 
 [@ $tf-> print_q() @]*
 
@@ -78,6 +81,7 @@ pokud je rovnice napsána v soustavě souřadnic, ve které je difuzní matice d
 \frac{\partial }{\partial y}\left(D\frac {\partial u}{\partial y}\right)
 ```]
 
+Vepište a nebo n.
 
 [@ $tf2-> print_q() @]*
 
@@ -90,6 +94,8 @@ D\frac {\partial^2 u}{\partial x^2}
 D\frac {\partial^2 u}{\partial y^2}
 ```]
 
+Vepište a nebo n.
+
 [@ $tf3-> print_q() @]*
 
 
@@ -101,9 +107,9 @@ D\frac {\partial^2 u}{\partial y^2}
 \frac{\partial }{\partial y}\left(D\frac {\partial u}{\partial y}\right)
 ```]
 
+Vepište a nebo n.
 
 [@ $tf4-> print_q() @]*
-
 
 
 END_PGML
