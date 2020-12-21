@@ -14,6 +14,7 @@ $showPartialCorrectAnswers = 0;
 $tf = new_select_list();
 $tf2 = new_select_list();
 $tf3 = new_select_list();
+$tf4 = new_select_list();
 
 $tf -> qa ( # each entry has to end with a comma
 "Izotropní materiál.", "N",
@@ -33,9 +34,16 @@ $tf3 -> qa ( # each entry has to end with a comma
 "Homogenní materiál a s lineárním konstitutivním zákonem.", "A",
 "Bez zdrojů.", "A");
 
+$tf4 -> qa ( # each entry has to end with a comma
+"Izotropní materiál.", "A",
+"Stacionární děj.", "A",
+"Homogenní materiál a s lineárním konstitutivním zákonem.", "N",
+"Bez zdrojů.", "N");
+
 $tf ->choose(4);
 $tf2 ->choose(4);
 $tf3 ->choose(4);
+$tf4 ->choose(4);
 
 BEGIN_PGML
 
@@ -85,6 +93,18 @@ D\frac {\partial^2 u}{\partial y^2}
 [@ $tf3-> print_q() @]*
 
 
+-------
+
+[``` 0=
+\sigma+\frac{\partial }{\partial x}\left(D\frac {\partial u}{\partial x}\right)
++
+\frac{\partial }{\partial y}\left(D\frac {\partial u}{\partial y}\right)
+```]
+
+
+[@ $tf4-> print_q() @]*
+
+
 
 END_PGML
 
@@ -103,10 +123,45 @@ END_PGML_HINT
 
 BEGIN_PGML_SOLUTION
 
+V rovnici
+[``` 0 =
+\frac{\partial }{\partial x}\left(D_x\frac {\partial u}{\partial x}\right)
++
+\frac{\partial }{\partial y}\left(D_y\frac {\partial u}{\partial y}\right)
+```]
+není derivace podle času ani člen bez derivací. Proto se jedná o stacionární rovnici bez zdrojů.
+
+V rovnici
+[``` \frac{\partial u}{\partial t}=
+\frac{\partial }{\partial x}\left(D\frac {\partial u}{\partial x}\right)
++
+\frac{\partial }{\partial y}\left(D\frac {\partial u}{\partial y}\right)
+```]
+není člen bez derivací a nejsou odlišeny difzuní koeficienty. Proto se jedná o rovnici bez zdrojů a v izotropním materiálu.
+
+
+V rovnici
+[``` \frac{\partial u}{\partial t}=
+D\frac {\partial^2 u}{\partial x^2}
++
+D\frac {\partial^2 u}{\partial y^2}
+```]
+není člen bez derivací, nejsou zde odlišeny difuzní koeficienty a difuzní koeficenty nejsou uvnitř derivací. Proto se jedná o rovnici bez zdrojů, v izotropním materiálu a v materiálu, který je homogenní a má lineární materiálovou odezvu.
+
+V rovnici
+[``` 0=
+\sigma+\frac{\partial }{\partial x}\left(D\frac {\partial u}{\partial x}\right)
++
+\frac{\partial }{\partial y}\left(D\frac {\partial u}{\partial y}\right)
+```]
+není derivace podle času a nejsou odlišeny difuzní koeficenty. Proto se jedná o stacionární rovnici v izotropním materiálu.
+
+
 END_PGML_SOLUTION
 
 ANS(str_cmp( $tf->ra_correct_ans )   ) ;
 ANS(str_cmp( $tf2->ra_correct_ans )   ) ;
 ANS(str_cmp( $tf3->ra_correct_ans )   ) ;
+ANS(str_cmp( $tf4->ra_correct_ans )   ) ;
 
 ENDDOCUMENT();
