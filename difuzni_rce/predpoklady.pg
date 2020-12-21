@@ -56,7 +56,7 @@ Dvourozměrná obecná difuzní rovnice (popisující nestacionární děj, umo�
 +
 \frac{\partial }{\partial y}\left(D_y\frac {\partial u}{\partial y}\right),
 ```]
-pokud je rovnice napsána v soustavě souřadnic, ve které je difuzní matice diagonální. Tuto rovnici je možné dále zjednodušit vynecháním někerých členů, podle specifiky úlohy. Například úloha může být stacionární, bez přítomnosti zdrojů, s izotrpním, homogenním či lineárním materiálem a každý z těchto předpokladů se na rovnici podepíše jistým způsobem, ať už sám o sobě, nebo v kombinaci s dalšími předpoklady). 
+pokud je rovnice napsána v soustavě souřadnic, ve které je difuzní matice diagonální. Tuto rovnici je možné dále zjednodušit vynecháním některých členů, podle specifiky úlohy. Například úloha může být stacionární, bez přítomnosti zdrojů, s izotropním, homogenním či lineárním materiálem a každý z těchto předpokladů se na rovnici podepíše jistým způsobem, ať už sám o sobě, nebo v kombinaci s dalšími předpoklady). 
 
 *Instrukce:* Pro následující speciální případy difuzní rovnice vyznačte předpoklady nutné pro transformaci do daného tvaru. Do volného políčka napište písmeno "n" nebo "a" podle toho, zda je předpoklad nutný či nikoliv. (Bez uvozovek, na velikosti písma nezáleží.)
 
@@ -137,7 +137,7 @@ V rovnici
 +
 \frac{\partial }{\partial y}\left(D\frac {\partial u}{\partial y}\right)
 ```]
-není člen bez derivací a nejsou odlišeny difzuní koeficienty. Proto se jedná o rovnici bez zdrojů a v izotropním materiálu.
+není člen bez derivací a nejsou odlišeny difuzní koeficienty. Proto se jedná o rovnici bez zdrojů a v izotropním materiálu.
 
 
 V rovnici
@@ -146,7 +146,7 @@ D\frac {\partial^2 u}{\partial x^2}
 +
 D\frac {\partial^2 u}{\partial y^2}
 ```]
-není člen bez derivací, nejsou zde odlišeny difuzní koeficienty a difuzní koeficenty nejsou uvnitř derivací. Proto se jedná o rovnici bez zdrojů, v izotropním materiálu a v materiálu, který je homogenní a má lineární materiálovou odezvu.
+není člen bez derivací, nejsou zde odlišeny difuzní koeficienty a difuzní koeficienty nejsou uvnitř derivací. Proto se jedná o rovnici bez zdrojů, v izotropním materiálu a v materiálu, který je homogenní a má lineární materiálovou odezvu.
 
 V rovnici
 [``` 0=
@@ -154,7 +154,7 @@ V rovnici
 +
 \frac{\partial }{\partial y}\left(D\frac {\partial u}{\partial y}\right)
 ```]
-není derivace podle času a nejsou odlišeny difuzní koeficenty. Proto se jedná o stacionární rovnici v izotropním materiálu.
+není derivace podle času a nejsou odlišeny difuzní koeficienty. Proto se jedná o stacionární rovnici v izotropním materiálu.
 
 
 END_PGML_SOLUTION
