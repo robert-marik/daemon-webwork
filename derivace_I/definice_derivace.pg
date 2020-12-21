@@ -27,7 +27,7 @@ $showHint = 1;
 $ml = new_match_list();
 $ml->rf_print_q(~~&pop_up_list_print_q);
 $ml->ra_pop_up_list([
-"No answer" => "?",
+"Bez odpovedi" => "?",
 "A" => "A", "B" => "B", "C" => "C", 
 "D" => "D", "E" => "E"
 ]);
@@ -91,7 +91,7 @@ $showPartialCorrectAnswers = 0;
 install_problem_grader(~~&custom_problem_grader_fluid);
 $ENV{'grader_numright'} = [1,2,3];
 $ENV{'grader_scores'} = [0.3,0.6,1];
-$ENV{'grader_message'} = "Můžete dostat částečné hodnocení za částečně správnou odpověď.";
+$ENV{'grader_message'} = "Muzete dostat castecne hodnoceni za castecne spravnou odpoved.";
 
 #
 #  All or nothing grader

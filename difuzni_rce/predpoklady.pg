@@ -1,0 +1,112 @@
+##################################################
+
+DOCUMENT(); 
+loadMacros(
+"PGstandard.pl",
+"PGML.pl",
+"MathObjects.pl",
+"PGchoicemacros.pl",
+"PGcourse.pl",
+);
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 0;
+
+$tf = new_select_list();
+$tf2 = new_select_list();
+$tf3 = new_select_list();
+
+$tf -> qa ( # each entry has to end with a comma
+"Izotropní materiál.", "N",
+"Stacionární děj.", "A",
+"Homogenní materiál a s lineárním konstitutivním zákonem.", "N",
+"Bez zdrojů.", "A");
+
+$tf2 -> qa ( # each entry has to end with a comma
+"Izotropní materiál.", "A",
+"Stacionární děj.", "N",
+"Homogenní materiál a s lineárním konstitutivním zákonem.", "N",
+"Bez zdrojů.", "A");
+
+$tf3 -> qa ( # each entry has to end with a comma
+"Izotropní materiál.", "A",
+"Stacionární děj.", "N",
+"Homogenní materiál a s lineárním konstitutivním zákonem.", "A",
+"Bez zdrojů.", "A");
+
+$tf ->choose(4);
+$tf2 ->choose(4);
+$tf3 ->choose(4);
+
+BEGIN_PGML
+
+## Předpoklady pro zjednodušení difuzní rovnice
+
+Dvourozměrná obecná difuzní rovnice (popisující nestacionární děj, umožňující započítání zdrojů a pracující s nejobecnějším materiálem) má tvar
+[``` \frac{\partial u}{\partial t}=
+\sigma +
+\frac{\partial }{\partial x}\left(D_x\frac {\partial u}{\partial x}\right)
++
+\frac{\partial }{\partial y}\left(D_y\frac {\partial u}{\partial y}\right),
+```]
+pokud je rovnice napsána v soustavě souřadnic, ve které je difuzní matice diagonální. Tuto rovnici je možné dále zjednodušit vynecháním někerých členů, podle specifiky úlohy. Například úloha může být stacionární, bez přítomnosti zdrojů, s izotrpním, homogenním či lineárním materiálem a každý z těchto předpokladů se na rovnici podepíše jistým způsobem, ať už sám o sobě, nebo v kombinaci s dalšími předpoklady). 
+
+*Instrukce:* Pro následující speciální případy difuzní rovnice vyznačte předpoklady nutné pro transformaci do daného tvaru. Do volného políčka napište písmeno "n" nebo "a" podle toho, zda je předpoklad nutný či nikoliv. (Bez uvozovek, na velikosti písma nezáleží.)
+
+-------
+
+[``` 0 =
+\frac{\partial }{\partial x}\left(D_x\frac {\partial u}{\partial x}\right)
++
+\frac{\partial }{\partial y}\left(D_y\frac {\partial u}{\partial y}\right)
+```]
+
+[@ $tf-> print_q() @]*
+
+-------
+
+[``` \frac{\partial u}{\partial t}=
+\frac{\partial }{\partial x}\left(D\frac {\partial u}{\partial x}\right)
++
+\frac{\partial }{\partial y}\left(D\frac {\partial u}{\partial y}\right)
+```]
+
+
+[@ $tf2-> print_q() @]*
+
+
+-------
+
+[``` \frac{\partial u}{\partial t}=
+D\frac {\partial^2 u}{\partial x^2}
++
+D\frac {\partial^2 u}{\partial y^2}
+```]
+
+[@ $tf3-> print_q() @]*
+
+
+
+END_PGML
+
+$showHint = 1;
+BEGIN_PGML_HINT
+
+Pročtěte si pečlivě původ jednotlivých členů rovnice a zaměřte se na členy, které se liší od obecného tvaru. 
+
+* Který člen vyjadřuje časovou změnu? Pro stacionární rovnici bude nulový.
+* Který člen vyjadřuje vydatnost zdrojů? Bez zdrojů bude nulový.
+* Které koeficienty charakterizují materiálovou odezvu v jednotlivých směrech? Pro izotropní materiál budou stejné.
+* Je difuzní koeficient závislý na poloze nebo na stavové veličině? Pokud ne, tj. pro lineární a homogenní materiál, budou difuzní členy zjednodušeny do tvaru součinu difuzního koeficientu a druhé derivace.
+
+END_PGML_HINT
+
+
+BEGIN_PGML_SOLUTION
+
+END_PGML_SOLUTION
+
+ANS(str_cmp( $tf->ra_correct_ans )   ) ;
+ANS(str_cmp( $tf2->ra_correct_ans )   ) ;
+ANS(str_cmp( $tf3->ra_correct_ans )   ) ;
+
+ENDDOCUMENT();

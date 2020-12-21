@@ -21,7 +21,7 @@ $tf->rf_print_a(~~&std_print_a);
 
 # Choices presented to students
 $tf->ra_pop_up_list( [ 
-"Vyberte odpověď" => "?", 
+"Vyberte odpoved" => "?", 
 "da/dt"  => "da/dt", 
 "db/dt"  => "db/dt", 
 "dL/dt"  => "dL/dt", 
@@ -81,7 +81,7 @@ $showPartialCorrectAnswers = 0;
 install_problem_grader(~~&custom_problem_grader_fluid);
 $ENV{'grader_numright'} = [1,2,4];
 $ENV{'grader_scores'} = [0.2,0.5,1];
-$ENV{'grader_message'} = "Za částečně správnou odpověď získáte částečný počet bodů";
+#$ENV{'grader_message'} = "Za částečně správnou odpověď získáte částečný počet bodů";
 
 #
 #  All or nothing grader
