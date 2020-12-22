@@ -1,0 +1,215 @@
+# Legenda
+#
+# 0 nepoužít
+# 1 demo
+# 10 diferenciální počet
+# 20 integrální počet (jenom málo příkladů)
+# 30 diferenciální rovnice
+# 40 difuzní rovnice
+# 50 lineární algebra
+# 80 průřez
+# 90 výpočet
+    
+
+DOCUMENT();
+
+
+loadMacros(
+"PGstandard.pl",
+"MathObjects.pl",
+"parserRadioButtons.pl",
+"PGML.pl",
+"PGcourse.pl",
+);
+
+
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 0;
+$showHint = 1;
+
+
+$debug=0;
+
+# shuffle of @array in place
+sub fisher_yates_shuffle {
+$array = shift;
+$i;
+for ($i = @$array; --$i; ) {
+$j = random(0,$i);
+next if $i == $j;
+@$array[$i,$j] = @$array[$j,$i];
+}
+}
+
+$index=$pocet-1; # index
+
+$c=0;
+
+@text=();
+@radio=();
+@reseni=();
+
+
+sub f {
+   my ($n,$a,$b,@r)=(@_);
+   $delka = @r;
+   {
+	$c1=$c+1;
+	$text[$c]=$a;
+
+	#if ($b =~ /^+/) {$b =~ s/^[+]//s;}
+        $reseni[$c]=$b;
+
+        fisher_yates_shuffle(~~@r);
+        $radio[$c]=RadioButtons([[$b,@r]],0);
+        #$radio[$c]=RadioButtons([["OK: ".$b,@r]],0);
+        $c=$c+1;
+    }
+}
+
+
+f(40,"Jak byste v difuzní rovnici \[\frac{\partial u}{\partial t}=\nabla\cdot(D\nabla u)+\sigma\] slovně interpretovali člen na levé straně rovnice?",
+"rychlost růstu hustoty stavové veličiny, tj. změna množství stavové veličiny v jednotkovém objemu látky za jednotku času",
+"rychlost poklesu hustoty stavové veličiny, tj. množství stavové veličiny, které ubude v jednotkovém objemu látky za jednotku času",
+"úbytek toku přenášejícího stavovou veličinu; jinými slovy množství stavové veličiny, které za jednotku času přibude v jednotkovém objemu díky tomu, že se odpojí od toku a zůstane v daném místě",
+"přírůstek toku přenášejícího stavovou veličinu; jinými slovy množství stavové veličiny, které za jednotku času ubude v jednotkovém objemu díky tomu, že se připojí k toku a odteče",
+"výkon ze zdrojů, tj. množství stavové veličiny, které v jednotkovém objemu za jednotku času vygenerují zdroje (spotřebiče bereme jako zdroje se záporným výkonem)",
+"výkon ze spotřebičů, tj. množství stavové veličiny, které v jednotkovém objemu za jednotku času spotřebují spotřebiče (zdroje bereme jako spotřebiče se záporným výkonem)",
+);
+
+f(40,"Jak byste v difuzní rovnici \[\frac{\partial u}{\partial t}=\nabla\cdot(D\nabla u)+\sigma\] slovně interpretovali člen \(\displaystyle \nabla\cdot(D\nabla u)\) na pravé straně rovnice?",
+"úbytek toku přenášejícího stavovou veličinu; jinými slovy množství stavové veličiny, které za jednotku času přibude v jednotkovém objemu díky tomu, že se odpojí od toku a zůstane v daném místě",
+"rychlost růstu hustoty stavové veličiny, tj. změna množství stavové veličiny v jednotkovém objemu látky za jednotku času",
+"rychlost poklesu hustoty stavové veličiny, tj. množství stavové veličiny, které ubude v jednotkovém objemu látky za jednotku času",
+"přírůstek toku přenášejícího stavovou veličinu; jinými slovy množství stavové veličiny, které za jednotku času ubude v jednotkovém objemu díky tomu, že se připojí k toku a odteče",
+"výkon ze zdrojů, tj. množství stavové veličiny, které v jednotkovém objemu za jednotku času vygenerují zdroje (spotřebiče bereme jako zdroje se záporným výkonem)",
+"výkon ze spotřebičů, tj. množství stavové veličiny, které v jednotkovém objemu za jednotku času spotřebují spotřebiče (zdroje bereme jako spotřebiče se záporným výkonem)",
+);
+
+f(40,"Jak byste v difuzní rovnici \[\frac{\partial u}{\partial t}=\nabla\cdot(D\nabla u)+\sigma\] slovně interpretovali člen \(\displaystyle \sigma\) na pravé straně rovnice?",
+"výkon ze zdrojů, tj. množství stavové veličiny, které v jednotkovém objemu za jednotku času vygenerují zdroje (spotřebiče bereme jako zdroje se záporným výkonem)",
+"rychlost růstu hustoty stavové veličiny, tj. změna množství stavové veličiny v jednotkovém objemu látky za jednotku času",
+"rychlost poklesu hustoty stavové veličiny, tj. množství stavové veličiny, které ubude v jednotkovém objemu látky za jednotku času",
+"úbytek toku přenášejícího stavovou veličinu; jinými slovy množství stavové veličiny, které za jednotku času přibude v jednotkovém objemu díky tomu, že se odpojí od toku a zůstane v daném místě",
+"přírůstek toku přenášejícího stavovou veličinu; jinými slovy množství stavové veličiny, které za jednotku času ubude v jednotkovém objemu díky tomu, že se připojí k toku a odteče",
+"výkon ze spotřebičů, tj. množství stavové veličiny, které v jednotkovém objemu za jednotku času spotřebují spotřebiče (zdroje bereme jako spotřebiče se záporným výkonem)",
+);
+
+f(40,"Co v jednorozměrné rovnici vedení tepla \[\rho c\frac{\partial T}{\partial t}=\frac{\partial}{\partial x}\left(k\frac{\partial T}{\partial x}\right)\] vyjadřuje člen na levé straně rovnice?",
+"Rychlost změny hustoty vnitřní energie v čase, tj. změna vnitřní energie v jednotkové délce za jednotku času.",
+"Rychlost růstu teploty v čase, tj. nárůst teploty v daném místě za jednotku času.",
+"Jednorozměrný gradient teploty, tj. rychlost růstu teploty ve směru osy \(\displaystyle x\).",
+"Tok tepla ve směru osy \(\displaystyle x\), tj. množství tepla, které projde za jednotku času daným místem ve směru osy \(\displaystyle x\).",
+"Záporně vzatý tok tepla ve směru osy \(\displaystyle x\), tj. množství tepla, které projde za jednotku času daným místem proti směru osy \(\displaystyle x\).",
+"Jednorozměrnou divergenci toku tepla, tj. veličinu měřící míru, s jakou tok v daném místě nabývá na intenzitě.",
+"Záporně vzatou jednorozměrnou divergenci toku tepla, tj. veličinu měřící míru, s jakou tok v daném místě slábne.",
+"Průměrnou teplotu podél celé délky studovaného jednorozměrného objektu.",
+);
+
+f(40,"Co v jednorozměrné rovnici vedení tepla \[\rho c\frac{\partial T}{\partial t}=\frac{\partial}{\partial x}\left(k\frac{\partial T}{\partial x}\right)\] vyjadřuje člen na pravé straně rovnice?",
+"Záporně vzatou jednorozměrnou divergenci toku tepla, tj. veličinu měřící míru, s jakou tok v daném místě slábne.",
+"Rychlost změny hustoty vnitřní energie v čase, tj. změna vnitřní energie v jednotkové délce za jednotku času.",
+"Rychlost růstu teploty v čase, tj. nárůst teploty v daném místě za jednotku času.",
+"Jednorozměrný gradient teploty, tj. rychlost růstu teploty ve směru osy \(\displaystyle x\).",
+"Tok tepla ve směru osy \(\displaystyle x\), tj. množství tepla, které projde za jednotku času daným místem ve směru osy \(\displaystyle x\).",
+"Čas, za jaký se teplota ustálí v rovnovážné poloze.",
+);
+
+f(40,"Co v jednorozměrné rovnici vedení tepla \[\rho c\frac{\partial T}{\partial t}=\frac{\partial}{\partial x}\left(k\frac{\partial T}{\partial x}\right)\] vyjadřuje člen \(\displaystyle \frac{\partial T}{\partial t}\)?",
+"Rychlost růstu teploty v čase, tj. nárůst teploty v daném místě za jednotku času.",
+"Rychlost změny hustoty vnitřní energie v čase, tj. změna vnitřní energie v jednotkové délce za jednotku času.",
+"Jednorozměrný gradient teploty, tj. rychlost růstu teploty ve směru osy \(\displaystyle x\).",
+"Tok tepla ve směru osy \(\displaystyle x\), tj. množství tepla, které projde za jednotku času daným místem ve směru osy \(\displaystyle x\).",
+"Jednorozměrnou divergenci toku tepla, tj. veličinu měřící míru, s jakou tok v daném místě nabývá na intenzitě.",
+"Záporně vzatou jednorozměrnou divergenci toku tepla, tj. veličinu měřící míru, s jakou tok v daném místě slábne.",
+);
+
+f(40,"Co v jednorozměrné rovnici vedení tepla \[\rho c\frac{\partial T}{\partial t}=\frac{\partial}{\partial x}\left(k\frac{\partial T}{\partial x}\right)\] vyjadřuje člen \(\displaystyle \frac{\partial T}{\partial x}\)?",
+"Jednorozměrný gradient teploty, tj. rychlost růstu teploty ve směru osy \(\displaystyle x\).",
+"Rychlost změny hustoty vnitřní energie v čase, tj. změna vnitřní energie v jednotkové délce za jednotku času.",
+"Rychlost růstu teploty v čase, tj. nárůst teploty v daném místě za jednotku času.",
+"Tok tepla ve směru osy \(\displaystyle x\), tj. množství tepla, které projde za jednotku času daným místem ve směru osy \(\displaystyle x\).",
+"Jednorozměrnou divergenci toku tepla, tj. veličinu měřící míru, s jakou tok v daném místě nabývá na intenzitě.",
+"Záporně vzatou jednorozměrnou divergenci toku tepla, tj. veličinu měřící míru, s jakou tok v daném místě slábne.",
+);
+
+f(40,"Co v jednorozměrné rovnici vedení tepla \[\rho c\frac{\partial T}{\partial t}=\frac{\partial}{\partial x}\left(k\frac{\partial T}{\partial x}\right)\] vyjadřuje člen \(\displaystyle k\frac{\partial T}{\partial x}\)?",
+"Záporně vzatý tok tepla ve směru osy \(\displaystyle x\), tj. množství tepla, které projde za jednotku času daným místem proti směru osy \(\displaystyle x\).",
+"Rychlost změny hustoty vnitřní energie v čase, tj. změna vnitřní energie v jednotkové délce za jednotku času.",
+"Rychlost růstu teploty v čase, tj. nárůst teploty v daném místě za jednotku času.",
+"Jednorozměrný gradient teploty, tj. rychlost růstu teploty ve směru osy \(\displaystyle x\).",
+"Jednorozměrnou divergenci toku tepla, tj. veličinu měřící míru, s jakou tok v daném místě nabývá na intenzitě.",
+"Záporně vzatou jednorozměrnou divergenci toku tepla, tj. veličinu měřící míru, s jakou tok v daném místě slábne.",
+);
+
+f(40,"Uvažujme jednorozměrnou rovnici vedení tepla \[\rho c\frac{\partial T}{\partial t}=\frac{\partial}{\partial x}\left(k\frac{\partial T}{\partial x}\right).\] Fyzikální interpretace je snazší pro rovnici ve tvaru \[\rho c\frac{\partial T}{\partial t}=-\frac{\partial}{\partial x}\left(-k\frac{\partial T}{\partial x}\right).\] Která část tohoto vzorce vyjadřuje rychlost, s jakou se v čase mění teplota v daném místě?",
+"\(\displaystyle \frac{\partial T}{\partial t}\)",
+"\(\displaystyle \rho c\frac{\partial T}{\partial t}\)",
+"\(\displaystyle \frac{\partial T}{\partial x}\)",
+"\(\displaystyle -k\frac{\partial T}{\partial x}\)",
+"\(\displaystyle -\frac{\partial}{\partial x}\left(-k\frac{\partial T}{\partial x}\right)\) tj. \(\displaystyle \frac{\partial}{\partial x}\left(k\frac{\partial T}{\partial x}\right)\)",
+);
+
+f(40,"Uvažujme jednorozměrnou rovnici vedení tepla \[\rho c\frac{\partial T}{\partial t}=\frac{\partial}{\partial x}\left(k\frac{\partial T}{\partial x}\right).\] Fyzikální interpretace je snazší pro rovnici ve tvaru \[\rho c\frac{\partial T}{\partial t}=-\frac{\partial}{\partial x}\left(-k\frac{\partial T}{\partial x}\right).\] Která část tohoto vzorce vyjadřuje rychlost, s jakou ve směru osy \(\displaystyle x\) roste teplota v daném místě?",
+"\(\displaystyle \frac{\partial T}{\partial x}\)",
+"\(\displaystyle \frac{\partial T}{\partial t}\)",
+"\(\displaystyle \rho c\frac{\partial T}{\partial t}\)",
+"\(\displaystyle -k\frac{\partial T}{\partial x}\)",
+"\(\displaystyle -\frac{\partial}{\partial x}\left(-k\frac{\partial T}{\partial x}\right)\) tj. \(\displaystyle \frac{\partial}{\partial x}\left(k\frac{\partial T}{\partial x}\right)\)",
+);
+
+f(40,"Uvažujme jednorozměrnou rovnici vedení tepla \[\rho c\frac{\partial T}{\partial t}=\frac{\partial}{\partial x}\left(k\frac{\partial T}{\partial x}\right).\] Fyzikální interpretace je snazší pro rovnici ve tvaru \[\rho c\frac{\partial T}{\partial t}=-\frac{\partial}{\partial x}\left(-k\frac{\partial T}{\partial x}\right).\] Která část tohoto vzorce vyjadřuje tok tepla ve směru osy \(\displaystyle x\) v daném místě?",
+"\(\displaystyle \frac{\partial T}{\partial t}\)",
+"\(\displaystyle \rho c\frac{\partial T}{\partial t}\)",
+"\(\displaystyle \frac{\partial T}{\partial x}\)",
+"\(\displaystyle -k\frac{\partial T}{\partial x}\)",
+"\(\displaystyle -\frac{\partial}{\partial x}\left(-k\frac{\partial T}{\partial x}\right)\) tj. \(\displaystyle \frac{\partial}{\partial x}\left(k\frac{\partial T}{\partial x}\right)\)",
+);
+
+
+
+BEGIN_PGML
+
+## Interpretace komponent difuzní rovnice
+
+END_PGML
+
+$last=$c-1;
+
+@indexy=(0..$last);
+
+if (!$debug)
+{
+  $temp=random(0,$last);
+  @indexy=($temp);
+}
+
+
+foreach $i ( @indexy ) {
+
+BEGIN_PGML
+
+[$text[$i] ]*
+
+[_]{$radio[$i]}
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+_Řešení: [$reseni[$i] ]*_
+
+END_PGML_SOLUTION
+
+if ($debug)
+{
+BEGIN_PGML
+-------------------
+END_PGML
+}
+
+}
+
+
+ENDDOCUMENT();
+
