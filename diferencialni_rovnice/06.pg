@@ -77,8 +77,8 @@ BEGIN_PGML
 
 [@ image( insertGraph($graph) ,width=>400,height=>400,tex_size=>600) @]*
 
-V této úloze se budeme zabývat rovnicemi typu [``` \frac{\mathrm dx}{\mathrm dt}=[$prava_strana],```]
-tj. autonomními rovnicemi s pravou stranou zapsanou ve formě rozdílu dvou funkcí. Slovem autonomní je vyjádřeno, že pravá strana nezávisí na čase [`t`].
+V této úloze se budeme zabývat rovnicí [``` \frac{\mathrm dx}{\mathrm dt}=[$prava_strana],```]
+tj. autonomní rovnicí s pravou stranou zapsanou ve formě rozdílu dvou funkcí. Slovem autonomní je vyjádřeno, že pravá strana nezávisí na čase [`t`].
 
 Grafy funkcí jsou na obrázku. Modrý graf je grafem funkce [`f(x)`], červený grafem funkce [`g(x)`].
 
