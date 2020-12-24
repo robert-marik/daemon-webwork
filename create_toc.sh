@@ -32,7 +32,7 @@ a {width:75%; margin:auto; display:block;
 </head>
 <body>
 
-<h1>Příkady ve WeKWorK na samostatné procvičování</h1>
+<h1>Příkady v systému WeBWorK na samostatné procvičování</h1>
 
 
 "
