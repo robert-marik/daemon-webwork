@@ -24,13 +24,13 @@ $funkce=Compute("$a*x^2+$b*x+$c")->reduce;
 $derivace=Compute("2*$a*x+$b")->reduce;
 
 BEGIN_PGML
-## Linearizace pravé strany autonomní diferenciální rovnice
+## Stablita autonomní diferenciální rovnice podle derivace pravé strany
 
-V této úloze se budeme zabývat rovnicí typu [``` \frac{\mathrm dx}{\mathrm dt}=f(x)```]
-pro [``` f(x)=[$funkce] ```]
-tj. autonomními rovnicemi. Slovem autonomní je vyjádřeno, že pravá strana nezávisí na čase [`t`].
+V této úloze se budeme zabývat rovnicí [``` \frac{\mathrm dx}{\mathrm dt}=[$funkce],```]
+kde pro jednoduchost pro pravou stranu zavedeme ozančení [``` f(x)=[$funkce]. ```]
+Vidíme, že rovnice je autonomní, protože pravá strana nezávisí na čase [`t`].
 
-Tato rovnice má stacionární bod [`` x=1``]. Pro posouzení stability musíme určit charakter monotonie ve stacionárním bodě.
+Tato rovnice má stacionární bod [`` x=1``], protože platí [```f(1)=0.```] Pro posouzení stability musíme určit charakter monotonie ve stacionárním bodě.
 
 1. Derivace pravé strany je
     >>[`` \frac{\mathrm df}{\mathrm dx}={}``][________]{$derivace} <<
