@@ -45,7 +45,7 @@ Termohrnek bez atestu, vyrobený z rozemletého plastu ze staré elektroniky, uv
 
 Vypočtěte neurčitý integrál.
 
->> [`` \int [$funkce] \,\mathrm dt]={}``][__________________]{$prim->cmp(upToConstant=>1)}[``+C``]
+>> [`` \int [$funkce] \,\mathrm dt]={}``][__________________]{$prim->cmp(upToConstant=>1)}[``+C``]<<
 
 Vypočtěte, jaké množství BFR se do nápoje uvolní za první [$slovne] hodiny. Výsledek zadejte číslem v mikrogramech.
 
