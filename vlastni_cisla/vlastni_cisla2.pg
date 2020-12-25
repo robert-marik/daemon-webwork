@@ -1,0 +1,72 @@
+##################################################
+
+DOCUMENT(); 
+loadMacros(
+"PGstandard.pl",
+"PGML.pl",
+"MathObjects.pl",
+"PGcourse.pl",
+);
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+do
+{
+$a=non_zero_random(-1, 5);
+$b=non_zero_random(-1, 5);
+$c=non_zero_random(-2, 3);
+$stopa=$a+$c;
+$Mstopa=-($a+$c);
+$determinant=($a)*($c)-($b)*($b);
+}
+ until ( (($stopa)^2-4*($determinant)) >0 );
+ 
+$l1=($stopa+sqrt(($stopa)*($stopa)-4*($determinant)))*0.5;
+$l2=($stopa-sqrt(($stopa)*($stopa)-4*($determinant)))*0.5;
+
+
+Context("Numeric")->variables->are(lambda=>"Real");;
+Context()->variables->set(lambda => {TeX => '\lambda'});
+
+Context()->flags->set(tolerance => 0.03, tolType => "absolute");
+
+$charpol=Compute("lambda^2-($stopa)*lambda+($determinant)")->reduce;
+
+
+BEGIN_PGML
+
+## Vlastní čísla symetrické matice druhého řádu
+
+Budeme se snažit určit vlastní čísla matice [``` A=\begin{pmatrix}[$a] & [$b] \\ [$b] & [$c]\end{pmatrix}.```]
+
+1. Většina aplikací vyžaduje, aby vlastní čísla byla kladná. Toho se nepodaří dosáhnout, bude-li determinant záporný. Zkontrolujte tedy nejprve, že determinant není záporný. Vypočtěte determinant.
+    >> [``|A|={}``][________________________]{$determinant}<<
+1. Určete charakteristický polynom matice. Použijte proměnnou [`\lambda`].
+    >> [``|A-\lambda I|={}``][________________________________________]{$charpol}<<
+    _Poznámka: Zapište polynom v proměnné [`\lambda`], tuto proměnnou zapisujte jako *lambda*, tedy například polynom [``` \lambda^2-6\lambda +20```] zapíšete jako *lambda^2-6 \* lambda + 20*._
+1. Najděte vlastní čísla matice
+    >>[``\lambda_{1,2}={} ``] [____________________________________]*{List("$l1,$l2")} <<
+    _Poznámka: Odpověď zapište jako dvojici čísel oddělených čárkou. Na pořadí nezáleží. Vlastní čísla pravděpodobně nebudou celočíselná, ale budete potřebovat vzorec [``` x_{1,2}=\frac{-b\pm\sqrt{b^2-4ac}}{2a}```] pro řešení kvadratické rovnice [``` ax^2+bx+c=0```] a kalkulačku. Pokud budete zapisovat desetinnými čísly, zapište na dvě desetinná místa. V tomto případě nezapomeňte jako oddělovač desetinných míst použít desetinnou tečku._
+
+
+
+END_PGML
+
+$showHint = 1;
+BEGIN_PGML_HINT
+
+Musíte najít hodnoty, pro které je nulový determinant 
+[``` \begin{vmatrix}[$a]-\lambda & [$b] \\ [$b] & [$c]-\lambda\end{vmatrix}. ```]
+END_PGML_HINT
+
+
+BEGIN_PGML_SOLUTION
+Determinant je podle křížového pravidla [``` |A|=[$determinant]```].
+
+
+Charakteristický polznom je  determinant
+[``` \begin{vmatrix}[$a]-\lambda & [$b] \\ [$b] & [$c]-\lambda\end{vmatrix}=\lambda^2+([$Mstopa])\lambda + ([$determinant])=[$charpol]. ```]
+Řešením příslušné kvadratické rovnice dostáváme vlastní čísla [`\lambda_1=[$l1]`] a [`\lambda_2=[$l2]`].
+END_PGML_SOLUTION
+
+ENDDOCUMENT();

@@ -62,6 +62,8 @@ MYMAP[integraly_vypocet]="Integrál - výpočet"
 MYMAP[integraly_pouziti]="Integrál - využití"
 MYMAP[diferencialni_rovnice]="Diferencialni rovnice"
 MYMAP[difuzni_rce]="Difuzní rovnice"
+MYMAP[vlastni_cisla]="Vlastní čísla a vektory"
+
 
 saveheader=""
 for i in `grep '^## ' */*pg`
