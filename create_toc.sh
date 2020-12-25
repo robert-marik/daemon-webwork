@@ -10,35 +10,51 @@ echo "
   <style type=\"text/css\">code{white-space: pre;} body {  font-family: \"Open Sans\", Sans-Serif;}</style>
   <script src=\"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\" type=\"text/javascript\"></script>
 
-<style>
-h1, h2 {    text-align:center; }
 
-a {width:75%; margin:auto; display:block;
-  background-color: #0a5028;
-  color: white;
-  padding-top: 1em ;
-  padding-bottom: 1em;
+  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css\">
+  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.theme.min.css\">
+
+  
+<style>
+  h1, h2 {    text-align:center; }
+
+  body {max-width:800px; margin:auto;}
+
+a {
   text-decoration: none;
-  text-transform: uppercase;
-  text-align: center;
-  box-sizing: border-box;
-  border-bottom-style:solid;
-  border-bottom-color:lightgray;
 	 }
 
+a:before {content :\"•\";}
 
 </style>
+
+  <script src=\"https://code.jquery.com/jquery-1.12.4.js\"></script>
+  <script src=\"https://code.jquery.com/ui/1.12.1/jquery-ui.js\"></script>
+  <script>
+  jQuery( function() {
+    jQuery( \"#accordion\" ).accordion({heightStyle: 'content'});
+  } );
+  </script>
 
 </head>
 <body>
 
 <h1>Příkady v systému WeBWorK na samostatné procvičování</h1>
 
+Kliknutím na nadpis pro skupinu příkladů otevřete příslušnou skupinu a poté si můžete vybrat příkad. Některé příklady znáte z domácích úloh, některé vznikly pro důkladnější procvičení ve zkouškovém, některé vznikly pro zařazení nových příkaldů do písemky.
 
+<div id=\"accordion\">
 "
 
 
 IFS=$'\n'       # make newlines the only separator
+declare -A MYMAP
+MYMAP[derivace_vypocet]="Derivace - výpočet"
+MYMAP[derivace_pouziti]="Derivace - využití"
+MYMAP[integraly_vypocet]="Integrál - výpočet"
+MYMAP[integraly_pouziti]="Integrál - využití"
+MYMAP[diferencialni_rovnice]="Diferencialni rovnice"
+MYMAP[difuzni_rce]="Difuzní rovnice"
 
 saveheader=""
 for i in `grep '^## ' */*pg`
@@ -48,7 +64,11 @@ do
     title=`echo $i | cut -d# -f3`
     if [[ "$header" != "$saveheader" ]];
     then
-       echo "<h2> $header </h1>"
+       if [[ "" != "$saveheader" ]];
+       then
+	   echo "</div>"
+       fi	
+       echo "<h3>${MYMAP[$header]}</h3><div>"
        saveheader="$header"
     fi
        
@@ -56,6 +76,6 @@ do
 
 done
 
-echo "
+echo "</div></div>
 </html>
 </body>"
