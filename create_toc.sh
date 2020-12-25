@@ -34,12 +34,19 @@ a:before {content :\"•\";}
   jQuery( function() {
     jQuery( \"#accordion\" ).accordion({heightStyle: 'content'});
   } );
+  
   </script>
+
+<style>
+  body{background-color: #A1D15B;}
+.ui-state-active {background-color: #0a5028; 
+border:1px solid #333; }
+</style>
 
 </head>
 <body>
 
-<h1>Příkady v systému WeBWorK na samostatné procvičování</h1>
+<h1>Příklady v systému WeBWorK na samostatné procvičování</h1>
 
 Kliknutím na nadpis pro skupinu příkladů otevřete příslušnou skupinu a poté si můžete vybrat příkad. Některé příklady znáte z domácích úloh, některé vznikly pro důkladnější procvičení ve zkouškovém, některé vznikly pro zařazení nových příkaldů do písemky.
 
