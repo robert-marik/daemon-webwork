@@ -84,17 +84,10 @@ Grafy funkcí jsou na obrázku. Modrý graf je grafem funkce [`f(x)`], červený
 
 Určete počet a stabilitu stacionárních bodů této diferenciální rovnice. Odpovězte na otázku týkající se počtu stacionárních bodů a stability stacionárního bodu, který je nejvíce vlevo. Dácejte pozor, v jakém pořadí se odečítají funkce.
 
+1. Počet stacionárních bodů je [@ pop_up_list(''=>'','1'=>'1', '2'=>'2', '3'=>'3', 'jina moznost'=>'jina moznost') @]* .
+1. Stacionární bod nejvíce vlevo je [@ pop_up_list(''=>'','stabilni'=>'stabilni', 'nestabilni'=>'nestabilni') @]*.
+
 END_PGML
-
-BEGIN_TEXT
-
-
-$BR
-Počet stacionárních bodů je \{ pop_up_list(''=>'','1'=>'1', '2'=>'2', '3'=>'3', 'jiná možnost'=>'jiná možnost') \}.
-$BR
-Stacionární bod nejvíce vlevo je \{ pop_up_list(''=>'','stabilni'=>'stabilni', 'nestabilni'=>'nestabilni') \}.
-
-END_TEXT
 
 $ans1 = (($fa > 0) and ($fd<0)) ? '3': '1';
 

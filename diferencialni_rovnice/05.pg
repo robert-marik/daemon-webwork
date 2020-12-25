@@ -43,22 +43,15 @@ dostatečně dlouhého času se řešení ustálí na hodnotě odpovídající
 některému stabilnímu stacionárnímu bodu. Z teorie víme, že pokud má pravá strana v uvažovaném stacionárním bodě kladnou derivaci, je tento stacionární bod nestabilní. V případě záporné derivace naopak stabilní. Graficky znaménko derivace poznáme z monotonie.
 
 Na obrázku je graf funkce [`f(x)`], která je pravou stranou uvažované diferenciální rovnice. Tučná vodorovná čára uprostřed je osa [`x`]. Obrázek je nakreslen pro [`0\leq x\leq 8`] a případné nulové body funkce [`f`] jsou buď celá čísla nebo uprostřed mezi celými čísly. Vidíme tři průsečíky grafu funkce s osou [`x`], tj. tři nulové body funkce [`f`]. Rovnice má tedy tři stacionární body.
-END_PGML
 
-BEGIN_TEXT
-
-
-$BR
 Zapište stacionární body (zleva doprava, tj. od nejmenšího po největší) a u každého vyznačte, zda je stabilní či nestabilní. 
 
 
-$BR
-Stacionární bod vlevo: \(x_1={}\)\{ans_rule(10) \}  \{ pop_up_list(''=>'','stabilni'=>'stabilni', 'nestabilni'=>'nestabilni') \}
-$BR
-Stacionární bod uprostřed: \(x_2={}\)\{ans_rule(10) \}  \{ pop_up_list(''=>'','stabilni'=>'stabilni', 'nestabilni'=>'nestabilni') \}
-$BR
-Stacionární bod vpravo: \(x_3={}\)\{ans_rule(10) \}  \{ pop_up_list(''=>'','stabilni'=>'stabilni', 'nestabilni'=>'nestabilni') \}
-END_TEXT
+1. Stacionární bod vlevo je [`` x_1={}``][_____________] a tento bod je [@ pop_up_list(''=>'','stabilni'=>'stabilni', 'nestabilni'=>'nestabilni') @]*
+1. Stacionární bod uprostřed je [``x_2={}``][_____________] a tento bod je [@ pop_up_list(''=>'','stabilni'=>'stabilni', 'nestabilni'=>'nestabilni') @]*
+1. Stacionární bod vpravo je [``x_3={}``][_____________] a tento bod je  [@ pop_up_list(''=>'','stabilni'=>'stabilni', 'nestabilni'=>'nestabilni') @]*
+
+END_PGML
 
 $ans1 = ($sign > 0) ? 'nestabilni': 'stabilni';
 $ans2 = ($sign > 0) ? 'stabilni': 'nestabilni';

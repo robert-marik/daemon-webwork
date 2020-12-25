@@ -1,0 +1,61 @@
+DOCUMENT() ;        # This should be the first executable line in the problem.
+
+loadMacros(
+  "PGstandard.pl",
+  "PGchoicemacros.pl",
+  "PGgraphmacros.pl",
+  "PGML.pl",
+  "PGcourse.pl"
+);
+
+TEXT(beginproblem()) ;
+$showPartialCorrectAnswers = 0 ;
+$showHint = 1;
+
+do
+{
+$a = non_zero_random(-5,5);
+$b = non_zero_random(-5,5);
+$c=-($a+($b));
+$sign = 2*$a+$b;
+} until ($sign != 0);
+
+$funkce=Compute("$a*x^2+$b*x+$c")->reduce;
+$derivace=Compute("2*$a*x+$b")->reduce;
+
+BEGIN_PGML
+## Linearizace pravé strany autonomní diferenciální rovnice
+
+V této úloze se budeme zabývat rovnicí typu [``` \frac{\mathrm dx}{\mathrm dt}=f(x)```]
+pro [``` f(x)=[$funkce] ```]
+tj. autonomními rovnicemi. Slovem autonomní je vyjádřeno, že pravá strana nezávisí na čase [`t`].
+
+Tato rovnice má stacionární bod [`` x=1``]. Pro posouzení stability musíme určit charakter monotonie ve stacionárním bodě.
+
+1. Derivace pravé strany je
+    >>[`` \frac{\mathrm df}{\mathrm dx}={}``][________]{$derivace} <<
+1. Derivace pravé strany v bodě [`` x=1``] je
+    >>[`` \frac{\mathrm df}{\mathrm dx}(1)={}``][________]{$sign} <<
+1. Stacionární bod [`x=1`] je [@ pop_up_list(''=>'','stabilni'=>'stabilni', 'nestabilni'=>'nestabilni') @]*.
+
+END_PGML
+
+$ans1 = ($sign > 0) ? 'nestabilni': 'stabilni';
+
+ANS(str_cmp($ans1));
+
+BEGIN_PGML_HINT
+Pokud máte špatně stacionární body, ujistěte se, že je máte uspořádány podle velikosti a že jste je správně odpočítali. Vlevo je nula, dílek je roven jedné a některé nulové body mohou být uprostřed mezi dvěma dílky.
+
+Stabilitu poznáte podle toho, zda v daném stacionárním bodě funkce klesá (záporná derivace, stabilní stacionární bod) nebo roste (kladná derivace, nestabilní stacionární bod).
+END_PGML_HINT
+
+BEGIN_PGML_SOLUTION
+
+END_PGML_SOLUTION
+
+
+ENDDOCUMENT() ;        # This should be the last executable line in the problem.
+
+
+
