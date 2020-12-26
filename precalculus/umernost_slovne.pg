@@ -26,7 +26,6 @@ if ($kostka==0)
 	  "\(\displaystyle F= k{l^2}\)",
 	  "\(\displaystyle F= k{l}\)",
 	  "\(\displaystyle F= k\sqrt {l}\)",
-	  "\(\displaystyle F= k{l^2}\)",
 	  "\(\displaystyle F= \frac k{l}\)",
 	  "\(\displaystyle F= \frac {k}{\sqrt {l}}\)",
 	 ]],
@@ -46,8 +45,7 @@ elsif ($kostka==1)
 	  "\(\displaystyle f= k{l^2}\)",
 	  "\(\displaystyle f= k{l}\)",
 	  "\(\displaystyle f= k\sqrt {l}\)",
-	  "\(\displaystyle f= k{l^2}\)",
-	  "\(\displaystyle f= \frac k{l}\)",
+	  "\(\displaystyle f= \frac k{l^2}\)",
 	  "\(\displaystyle f= \frac k{\sqrt {l}}\)",
 	 ]],
 	0);  # První odpověď správná, odpovedi se permutuji
