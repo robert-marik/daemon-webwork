@@ -1,1 +1,3 @@
 WeBWorK files for my elaearning materials. In Czech.
+
+* diferencialni rovnice -> stabilita_autonomni.pg -> zmenit absolutni clen na parametr a pridat otazku, pro kteou hodnotu parametru je bod x=1 stacionernim bodem

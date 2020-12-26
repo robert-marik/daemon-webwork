@@ -1,0 +1,100 @@
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl",
+"MathObjects.pl",
+"parserRadioButtons.pl",
+"PGcourse.pl",
+"PGML.pl"
+);
+
+TEXT(beginproblem());
+
+$showHint = 1;
+
+$kostka=random(0,1);
+
+if ($kostka==0)
+{
+    $obrazek="sloup";
+    $otazka="U nosníku namáhaného na vzpěr je nutné, aby zatížení nepřekročilo jistou mez. Maximální zatížení nosníku daného průřezu souvisí délkou nosníku. Fyzikální analýzou je možné ukázat, že maximální svislá síla \(F\) působící v ose nosníku je nepřímo úměrná druhé mocnině jeho délky \(l\). Vyjádřete tento vztah matematicky.";
+    $odpoved="\(\displaystyle F=\frac k{l^2}\)";
+    
+    $radio = RadioButtons(
+	[[
+	  $odpoved,
+	  "\(\displaystyle F= k{l^2}\)",
+	  "\(\displaystyle F= k{l}\)",
+	  "\(\displaystyle F= k\sqrt {l}\)",
+	  "\(\displaystyle F= k{l^2}\)",
+	  "\(\displaystyle F= \frac k{l}\)",
+	  "\(\displaystyle F= \frac {k}{\sqrt {l}}\)",
+	 ]],
+	0);  # První odpověď správná, odpovedi se permutuji
+    
+    $zdroj="Obrázek: pixabay.com, autor alsen";
+}
+elsif ($kostka==1)
+{
+    $obrazek="kytara";
+    $otazka="Princip hry na strunné hudební nástroje spočívá ve zkracování struny na hmatníku, čímž se mění frekvence jejích kmitů a tím i výška tónu, tj. frekvence kmitů. Je známo, že frekvence \(f\) kmitů struny je nepřímo úměrná délce \(l\) struny. Vyjádřete tento vztah matematicky.";
+    $odpoved="\(\displaystyle f=\frac k{l}\)";
+    
+    $radio = RadioButtons(
+	[[
+	  $odpoved,
+	  "\(\displaystyle f= k{l^2}\)",
+	  "\(\displaystyle f= k{l}\)",
+	  "\(\displaystyle f= k\sqrt {l}\)",
+	  "\(\displaystyle f= k{l^2}\)",
+	  "\(\displaystyle f= \frac k{l}\)",
+	  "\(\displaystyle f= \frac k{\sqrt {l}}\)",
+	 ]],
+	0);  # První odpověď správná, odpovedi se permutuji
+    
+    $zdroj="Obrázek: pixabay.com, autor Couleur";
+}
+else
+{
+## dopsat
+    $obrazek="kukacky";
+    $otazka="Jedním z pravidelných dějů je kmitání kyvadla. Pomocí něj se dokonce dříve měřil čas. Pro matematické kyvadlo délky \(l\) je perioda \(T\) dána vzorcem  \[T=2\pi \sqrt{\frac lg},\]  kde \(g\) je tíhové zrychlení. Jak byste tento vztah mezi periodou \(T\) a délkou kyvadla \(l\) vyjádřili slovně?";
+    $odpoved="Perioda kyvadla je přímo úměrná odmocnině z délky kyvadla.";
+    
+    $radio = RadioButtons(
+	[[
+	  $odpoved,
+	  "Perioda kyvadla je nepřímo úměrná odmocnině z délky kyvadla.",
+	  "Perioda kyvadla je přímo úměrná druhé mocnině délky kyvadla.",
+	  "Perioda kyvadla je nepřímo úměrná druhé mocnině z délky kyvadla.",
+	  "Perioda kyvadla je přímo úměrná délce kyvadla.",
+	  "Perioda kyvadla je nepřímo úměrná délce kyvadla.",
+	 ]],
+	0);  # První odpověď správná, odpovedi se permutuji
+    
+    $zdroj="Obrázek: www.timestore.cz";
+}
+
+
+BEGIN_PGML
+
+## Matematické vyjádření souvislosti veličin
+
+[@ image("$obrazek.jpg", width=>400) @]*
+
+[$otazka]
+
+[_]{$radio}
+
+_[$zdroj]_
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[$odpoved]
+
+END_PGML_SOLUTION
+
+
+ENDDOCUMENT();
