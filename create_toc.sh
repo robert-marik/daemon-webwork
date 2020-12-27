@@ -54,7 +54,6 @@ Kliknutím na nadpis pro skupinu příkladů otevřete příslušnou skupinu a p
 "
 
 
-IFS=$'\n'       # make newlines the only separator
 declare -A MYMAP
 MYMAP[derivace_vypocet]="Derivace - výpočet"
 MYMAP[derivace_pouziti]="Derivace - využití"
@@ -67,25 +66,18 @@ MYMAP[precalculus]="Funkce"
 
 
 saveheader=""
-for i in `grep '^## ' */*pg`
+for j in precalculus derivace_vypocet derivace_pouziti integraly_vypocet integraly_pouziti diferencialni_rovnice vlastni_cisla difuzni_rce
 do
-    file=`echo $i| cut -d: -f1`
-    header=`echo $i| cut -d/ -f1`
-    title=`echo $i | cut -d# -f3`
-    if [[ "$header" != "$saveheader" ]];
-    then
-       if [[ "" != "$saveheader" ]];
-       then
-	   echo "</div>"
-       fi	
-       echo "<h3>${MYMAP[$header]}</h3><div>"
-       saveheader="$header"
-    fi
-       
-    echo "<a href='http://um.mendelu.cz/webwork2/html2xml?&answersSubmitted=0&sourceFilePath=problems/$file&problemSeed=123&displayMode=MathJax&courseID=daemon&userID=demon&course_password=demonek&outputformat=simpleM&language=cs_CZ' open='ww-procvicovani'>$title</a>"
-
+    echo "<h3>${MYMAP[$j]}</h3><div>"
+    for i in `grep '^## ' $j/*.pg | sed 's/ /_/g'`
+    do
+	file=`echo $i| cut -d: -f1`
+	title=`echo $i | cut -d# -f3 | sed 's/_/ /g'`
+	echo "<a href='http://um.mendelu.cz/webwork2/html2xml?&answersSubmitted=0&sourceFilePath=problems/$file&problemSeed=123&displayMode=MathJax&courseID=daemon&userID=demon&course_password=demonek&outputformat=simpleM&language=cs_CZ' open='ww-procvicovani'>$title</a>"
+    done
+    echo "</div>"
 done
-
+	 
 echo "</div></div>
 </html>
 </body>"
