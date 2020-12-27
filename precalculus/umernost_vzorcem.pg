@@ -17,7 +17,7 @@ $kostka=random(0,2);
 if ($kostka==0)
 {
     $obrazek="ryby";
-    $otazka="Hmotnost objektu souvisí velikostí. U některých živočišných druhů, jako jsou například mnohé ryby, mají mláďata přibližně stejný tvar jako dospělí a proto je u těchto druhů hmotnost \(m\) svázána se třetí mocninou délky \(l\) vztahem \[m= kl^3.\] Jak byste tento vztah přečetli slovně?";
+    $otazka="Hmotnost objektu souvisí s jeho velikostí. U některých živočišných druhů, jako jsou například mnohé ryby, mají mláďata přibližně stejný tvar jako dospělí a proto je u těchto druhů hmotnost \(m\) svázána se třetí mocninou délky \(l\) vztahem \[m= kl^3.\] Jak byste tento vztah přečetli slovně?";
     $odpoved="Hmotnost je přímo úměrná třetí mocnině její délky.";
     
     $radio = RadioButtons(
@@ -36,7 +36,7 @@ if ($kostka==0)
 elsif ($kostka==1)
 {
     $obrazek="hvezdy";
-    $otazka="Ve vědě zpravidla navazuje každý vědec na své předchůdce. Klasickou ukázkou je odvození gravitačního zákona. Na začátku byla podrobná pozorování pohybu planet, která vykonal Tycho Brahe. Z nich později Johanes Keppler vyvodil geniální zákony pro pohyb planet. Na tuto činnost navázal později Isaac Newton, který brilantní analýzou, v níž položil základy diferenciálního a integrálního počtu, prokázal, že aby Keplerovy zákony je možné odvodit matematickou cestou, pokud mezi gravitační silou \(F\) působící mezi dvěma objekty a jejich vzdáleností \(r\) je vztah tvaru \[F=\frac k{r^2}.\] Jak byste tento vztah mezi gravitační silou a vzdáleností vyjádřili slovně?";
+    $otazka="Ve vědě zpravidla navazuje každý vědec na své předchůdce. Klasickou ukázkou je odvození gravitačního zákona. Na začátku byla podrobná pozorování pohybu planet, která vykonal Tycho Brahe. Z nich později Johanes Keppler vyvodil geniální zákony pro pohyb planet. Na tuto činnost navázal později Isaac Newton, který brilantní analýzou, v níž položil základy diferenciálního a integrálního počtu, prokázal, že Keplerovy zákony je možné odvodit matematickou cestou, pokud mezi gravitační silou \(F\) působící mezi dvěma objekty a jejich vzdáleností \(r\) je vztah tvaru \[F=\frac k{r^2}.\] Jak byste tento vztah mezi gravitační silou a vzdáleností vyjádřili slovně?";
     $odpoved="Gravitační síla je nepřímo úměrná druhé mocnině vzdálenosti.";
     
     $radio = RadioButtons(
