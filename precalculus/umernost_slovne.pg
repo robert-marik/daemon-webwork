@@ -12,7 +12,7 @@ TEXT(beginproblem());
 
 $showHint = 1;
 
-$kostka=random(0,1);
+$kostka=random(2,2);
 
 if ($kostka==0)
 {
@@ -54,23 +54,25 @@ elsif ($kostka==1)
 }
 else
 {
-    ######~dopsat
-    $obrazek="kukacky";
-    $otazka="Jedním z pravidelných dějů je kmitání kyvadla. Pomocí něj se dokonce dříve měřil čas. Pro matematické kyvadlo délky \(l\) je perioda \(T\) dána vzorcem  \[T=2\pi \sqrt{\frac lg},\]  kde \(g\) je tíhové zrychlení. Jak byste tento vztah mezi periodou \(T\) a délkou kyvadla \(l\) vyjádřili slovně?";
-    $odpoved="Perioda kyvadla je přímo úměrná odmocnině z délky kyvadla.";
+    $obrazek="nakladaky";
+    $otazka="Odolnost nosníků zajímá nejenom stavaře dřevěných konstrukcí, ale například i arboristy (strom je možno chápat jako vetknutý nosník) nebo stavitele mostů (most je možno chápat jako nosník podepřený na dvou koncích). Při zátěžovém testu se zatíží most pomocí nákladních aut a porovnává se naměřený průhyb a jeho teoretická hodnota. 
+
+Pro rovnoměrně zatížený nosník je jeho prohnutí \(\delta\) úměrné čtvrté mocnině délky \(l\). Jak byste tuto souvislost zapsali matematicky?";
+    $odpoved="\(\displaystyle \delta=k{l^4}\)";
     
     $radio = RadioButtons(
 	[[
 	  $odpoved,
-	  "Perioda kyvadla je nepřímo úměrná odmocnině z délky kyvadla.",
-	  "Perioda kyvadla je přímo úměrná druhé mocnině délky kyvadla.",
-	  "Perioda kyvadla je nepřímo úměrná druhé mocnině z délky kyvadla.",
-	  "Perioda kyvadla je přímo úměrná délce kyvadla.",
-	  "Perioda kyvadla je nepřímo úměrná délce kyvadla.",
+	  "\(\displaystyle \delta= k{l^3}\)",
+	  "\(\displaystyle \delta= k{\sqrt {l}}\)",
+	  "\(\displaystyle \delta= \frac k{l}\)",
+	  "\(\displaystyle \delta= \frac k{l^3}\)",
+	  "\(\displaystyle \delta= \frac k{\sqrt[4]{l}}\)",
 	 ]],
 	0);  # První odpověď správná, odpovedi se permutuji
     
-    $zdroj="Obrázek: www.timestore.cz";
+    
+    $zdroj="";
 }
 
 
