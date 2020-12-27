@@ -21,7 +21,7 @@ $r0=Formula("-k*(T-[$T0])");
 
 BEGIN_PGML
 
-## Dřevo vystavené slunečnímu záření
+## Chata v horách
 
 [@ image("chata.jpg", width=>400) @]*
 
