@@ -17,6 +17,7 @@ $h=random(10,20,1);
 $dhdt=random(1,8,1)/10;
 
 $answer=Formula("2*$h*$dhdt*k");
+$answer0=Formula("2*h*k");
 
 BEGIN_PGML
 
@@ -35,13 +36,14 @@ Poldr má tvar koryta s trojúhelníkovým průřezem. Objem [`V`] vody v poldru
 kde [`k`] je konstanta. (Numerická hodnota konstanty závisí na tom, jaký úhel je u dna poldru, jak je poldr dlouhý, a také na tom, jaké jednotky používáme pro hloubku vody a jaké jednotky pro objem vody.) Nechť je konstanta [`k`] zvolena tak, že vzorec má na vstupu hloubku vody v centimetrech a objem vody v poldru vychází numericky v metrech krychlových. Jednotka času bude hodina.
 
 
-Předpokládejme, že hloubka vody v poldru je [``h=[$h]\mathrm{cm}``] a hloubka roste (v běžné řeči používáme spíše obrat hladina roste) rychlostí [``\frac{\mathrm dh}{\mathrm dt}=[$dhdt] \mathrm{cm}/\mathrm{hod}.``] Jak rychle přibývá celkové množství vody v poldru, tj. jak rychle v této situaci roste objem vody v poldru?
+1. Určete derivaci objemu [`V`] podle hloubky [`h`].
+    >>[``\frac{\mathrm dV}{\mathrm dh}={}``][___________]{$answer0} <<
+1. Předpokládejme, že hloubka vody v poldru je [``h=[$h]\mathrm{cm}``] a hloubka roste (v běžné řeči používáme spíše obrat hladina roste) rychlostí [``\frac{\mathrm dh}{\mathrm dt}=[$dhdt] \mathrm{cm}/\mathrm{hod}.``] Jak rychle přibývá celkové množství vody v poldru, tj. jak rychle v této situaci roste objem vody v poldru?
+    >>[``\frac{\mathrm dV}{\mathrm dt}={}``] [______________]{$answer->cmp()->withPostFilter(AnswerHints(Formula("2*k*h*dh/dt") => "Jste na dobre ceste, ale jeste je nutno dosadit zadane hodnoty pro h a dh/dt."))}[``\mathrm {m}^3/\mathrm{hod}``]<<
 
->>[``\frac{\mathrm dV}{\mathrm dt}={}``] [______________]{$answer->cmp()->withPostFilter(AnswerHints(Formula("2*k*h*dh/dt") => "Jste na dobre ceste, ale jeste je nutno dosadit zadane hodnoty pro h a dh/dt."))}[``\mathrm {m}^3/\mathrm{hod}``]<<
+    **Poznámka 1.** Vaše odpověď by měla obsahovat konstantu [`k`], jejíž hodnota nebyla zadána a kromě toho již jen číselné údaje. Vše je v jednotkách kompatibilních se zadaným vzorcem (hloubka v centimetrech, objem v metrech krychlových) a jednotky není nutné uvažovat. Nehledejte v příkladě žádný chyták, nepřevádějte žádné jednotky, jenom vyjádřete rychlost a dosaďte zadané hodnoty. Nezapomeňte, že můžete zadat i součin čísel, nemusíte násobení provádět bokem na kalkulačce a psát až výslednou odpověď.
 
-**Poznámka 1.** Vaše odpověď by měla obsahovat konstantu [`k`], jejíž hodnota nebyla zadána a kromě toho již jen číselné údaje. Vše je v jednotkách kompatibilních se zadaným vzorcem (hloubka v centimetrech, objem v metrech krychlových) a jednotky není nutné uvažovat. Nehledejte v příkladě žádný chyták, nepřevádějte žádné jednotky, jenom vyjádřete rychlost a dosaďte zadané hodnoty. Nezapomeňte, že můžete zadat i součin čísel, nemusíte násobení provádět bokem na kalkulačce a psát až výslednou odpověď.
-
-**Poznámka 2.** Nezapomeňte, že desetinná čísla zadáváme s desetinnou tečkou a ne s desetinnou čárkou. 
+    **Poznámka 2.** Nezapomeňte, že desetinná čísla zadáváme s desetinnou tečkou a ne s desetinnou čárkou. 
 
 END_PGML
 
