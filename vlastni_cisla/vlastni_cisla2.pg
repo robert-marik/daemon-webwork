@@ -52,19 +52,13 @@ Budeme se snažit určit vlastní čísla matice [``` A=\begin{pmatrix}[$a] & [$
 
 END_PGML
 
-$showHint = 1;
-BEGIN_PGML_HINT
-
-Musíte najít hodnoty, pro které je nulový determinant 
-[``` \begin{vmatrix}[$a]-\lambda & [$b] \\ [$b] & [$c]-\lambda\end{vmatrix}. ```]
-END_PGML_HINT
 
 
 BEGIN_PGML_SOLUTION
 Determinant je podle křížového pravidla [``` |A|=[$determinant]```].
 
 
-Charakteristický polznom je  determinant
+Charakteristický polynom je  determinant
 [``` \begin{vmatrix}[$a]-\lambda & [$b] \\ [$b] & [$c]-\lambda\end{vmatrix}=\lambda^2+([$Mstopa])\lambda + ([$determinant])=[$charpol]. ```]
 Řešením příslušné kvadratické rovnice dostáváme vlastní čísla [`\lambda_1=[$l1]`] a [`\lambda_2=[$l2]`].
 END_PGML_SOLUTION
