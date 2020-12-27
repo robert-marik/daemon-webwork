@@ -39,12 +39,12 @@ BEGIN_PGML
 
 Budeme se snažit určit vlastní čísla matice [``` A=\begin{pmatrix}[$a] & [$b] \\ [$b] & [$c]\end{pmatrix}.```]
 
-1. Většina aplikací vyžaduje, aby vlastní čísla byla kladná. Toho se nepodaří dosáhnout, bude-li determinant záporný. Zkontrolujte tedy nejprve, že determinant není záporný. Vypočtěte determinant.
+1. Většina aplikací vyžaduje, aby vlastní čísla měla stejné znaménko. To nastane, pokud bude determinant kladný. Je to i případ naší matice? V prvním kroku to zjistíme. Vypočtěte determinant matice [`A`].
     >> [``|A|={}``][________________________]{$determinant}<<
 1. Určete charakteristický polynom matice. Použijte proměnnou [`\lambda`].
     >> [``|A-\lambda I|={}``][________________________________________]{$charpol}<<
     _Poznámka: Zapište polynom v proměnné [`\lambda`], tuto proměnnou zapisujte jako *lambda*, tedy například polynom [``` \lambda^2-6\lambda +20```] zapíšete jako *lambda^2-6 \* lambda + 20*._
-1. Najděte vlastní čísla matice
+1. Najděte vlastní čísla matice. Podle prvního bodu byste měli mít částečnou kontrolu: pokud jste vypočítali správně determinant, budete vědět, jestli mají vlastní čísla stené nebo opačné znaménko. 
     >>[``\lambda_{1,2}={} ``] [____________________________________]*{List("$l1,$l2")} <<
     _Poznámka: Odpověď zapište jako dvojici čísel oddělených čárkou. Na pořadí nezáleží. Vlastní čísla pravděpodobně nebudou celočíselná, ale budete potřebovat vzorec [``` x_{1,2}=\frac{-b\pm\sqrt{b^2-4ac}}{2a}```] pro řešení kvadratické rovnice [``` ax^2+bx+c=0```] a kalkulačku. Pokud budete zapisovat desetinnými čísly, zapište na dvě desetinná místa. V tomto případě nezapomeňte jako oddělovač desetinných míst použít desetinnou tečku._
 
