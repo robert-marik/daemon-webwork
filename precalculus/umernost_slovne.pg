@@ -12,7 +12,7 @@ TEXT(beginproblem());
 
 $showHint = 1;
 
-$kostka=random(2,2);
+$kostka=random(0,2);
 
 if ($kostka==0)
 {
