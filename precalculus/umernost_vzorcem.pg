@@ -16,7 +16,7 @@ $kostka=random(0,2);
 
 if ($kostka==0)
 {
-    $obrazek="sloup";
+    $obrazek="ryby";
     $otazka="Hmotnost objektu souvisí velikostí. U některých živočišných druhů, jako jsou například mnohé ryby, mají mláďata přibližně stejný tvar jako dospělí a proto je u těchto druhů hmotnost \(m\) svázána se třetí mocninou délky \(l\) vztahem \[m= kl^3.\] Jak byste tento vztah přečetli slovně?";
     $odpoved="Hmotnost je přímo úměrná třetí mocnině její délky.";
     
