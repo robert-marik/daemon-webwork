@@ -43,7 +43,7 @@ $data =
 ,
 {
     obrazek=>"kukacky",
-    otazka=>"Jedním z pravidelných dějů je kmitání kyvadla. Pomocí něj se dokonce dříve měřil čas. Pro matematické kyvadlo délky \(l\) je perioda \(T\) dána vzorcem  \[T=>2\pi \sqrt{\frac lg},\]  kde \(g\) je tíhové zrychlení. Jak byste tento vztah mezi periodou \(T\) a délkou kyvadla \(l\) vyjádřili slovně?",
+    otazka=>"Jedním z pravidelných dějů je kmitání kyvadla. Pomocí něj se dokonce dříve měřil čas. Pro matematické kyvadlo délky \(l\) je perioda \(T\) dána vzorcem  \[T=2\pi \sqrt{\frac lg},\]  kde \(g\) je tíhové zrychlení. Jak byste tento vztah mezi periodou \(T\) a délkou kyvadla \(l\) vyjádřili slovně?",
     odpoved=>"Perioda kyvadla je přímo úměrná odmocnině z délky kyvadla.",
     moznosti=>[
 	  "Perioda kyvadla je nepřímo úměrná odmocnině z délky kyvadla.",
