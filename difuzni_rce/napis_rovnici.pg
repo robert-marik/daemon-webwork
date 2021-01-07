@@ -13,23 +13,6 @@ TEXT(beginproblem());
 $showPartialCorrectAnswers = 0;
 $showHint = 1;
 
-my $c=0;
-
-@nadpis=();
-@text=();
-@radio=();
-@reseni=();
-
-sub f {
-   my ($h,$a,@b)=(@_);
-   $c1=$c+1;
-   $nadpis[$c]="$c1. ".$h;
-   $text[$c]=$a;
-   my @bb = map { "\(\displaystyle\qquad".$_."\)" } @b;
-   $reseni[$c]=$bb[0];
-   $radio[$c]=RadioButtons([@bb],0);
-   $c=$c+1;
-}
 
 $t="\frac{\partial u}{\partial t}";
 $dx="D_x\frac{\partial^2 u}{\partial x^2}+D_y\frac{\partial^2 u}{\partial y^2}";
@@ -119,6 +102,7 @@ $ot       =  $data->[$i]->{otazka};
 $na       =  $data->[$i]->{nadpis};
 $obrazek  =  $data->[$i]->{obrazek};
 $od       =  $data->[$i]->{odpoved};
+$od       =  "\[ $od \]";
 $zdroj    =  $data->[$i]->{zdroj};
 @moznosti =@{$data->[$i]->{moznosti}};
 @moznosti = map {"\( \displaystyle $_ \)"} @moznosti;
