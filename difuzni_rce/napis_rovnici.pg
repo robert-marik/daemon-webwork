@@ -102,7 +102,6 @@ $ot       =  $data->[$i]->{otazka};
 $na       =  $data->[$i]->{nadpis};
 $obrazek  =  $data->[$i]->{obrazek};
 $od       =  $data->[$i]->{odpoved};
-$od       =  "\[ $od \]";
 $zdroj    =  $data->[$i]->{zdroj};
 @moznosti =@{$data->[$i]->{moznosti}};
 @moznosti = map {"\( \displaystyle $_ \)"} @moznosti;
@@ -127,7 +126,7 @@ END_PGML
 
 BEGIN_PGML_SOLUTION
 
-[$od]
+[``` [$od] ```]
 
 END_PGML_SOLUTION
 
