@@ -24,18 +24,6 @@ $data =
 [
 {
     obrazek=>"fire",
-    otazka=>"Pomocí difuzní rovnice je možno modelovat lesní požár. V tomto případě se používá rovnice vedení tepla, ve které jsou započítány zdroje. Model je zpravidla velmi hrubý a prosto stačí uvažovat prostředí jako homogenní s lineární odezvou a izotropní. Vyberte model vhodný pro zkoumání takového problému.",
-    odpoved=>"$t=\sigma+$Dx",    
-    moznosti=>[
-"0=\sigma+$dx",
-"$t=$dx",
-"0=\sigma+$Dx",
-],
-zdroj=>"Obrázek: pixabay.com, autor Titof33"
-}
-,
-{
-    obrazek=>"fire",
     nadpis=>"Lesní požár",
     otazka=>"Pomocí difuzní rovnice je možno modelovat postup lesního požáru. V tomto případě se používá rovnice vedení tepla, ve které jsou započítány zdroje. Model je zpravidla velmi hrubý a prosto stačí uvažovat prostředí jako homogenní s lineární odezvou a izotropní. Vyberte model vhodný pro zkoumání takového problému.",
     odpoved=>"$t=\sigma+$Dx",    
