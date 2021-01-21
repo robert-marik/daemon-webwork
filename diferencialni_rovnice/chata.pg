@@ -28,11 +28,11 @@ BEGIN_PGML
 
 Uvažujme chatu v horách s dřevěnými stěnami.
 
-1. V chatě se přestalo topit a teplota klesá. Předpokládeme, že teplota klesá podle Newtonova zákona tepelné výměny, tedy rychlostí úměrnou rozdílu teploty chaty a teploty okolí. Teplota okolí je [`[$T0]{}^\circ\mathrm{C}`]. Teplotu označte [`T`], konstantu úměrnosti označte [`k`] a model naformulujte tak, aby tato konstanta byla kladná.
+1. V chatě se přestalo topit a teplota klesá. Předpokládeme, že teplota klesá podle Newtonova zákona tepelné výměny, tedy rychlostí úměrnou rozdílu teploty chaty a teploty okolí. Teplota okolí je [`[$T0]{}^\circ\mathrm{C}`]. Teplotu v chatě označte [`T`], konstantu úměrnosti označte [`k`] a model naformulujte tak, aby tato konstanta byla kladná.
 
     >> [``\frac{\mathrm dT}{\mathrm dt}=``][__________]{$r0}<<
 
-1. Jako další situaci předpokládejme, že stěny chaty jsou vystaveny slunečním paprskům a díky nim se chata ohřívá. Tento ohřev způspbí růst teploty konstantní rychlostí [`r`]. Napište matematický model, který kombinuje spojený učinek ochlazování podle předchozího bodu (teplota okolí zůstává [`[$T0]{}^\circ\mathrm{C}`]) a ohřevu slunečními paprsky. 
+1. Jako další situaci předpokládejme, že stěny chaty jsou vystaveny slunečním paprskům a díky nim se chata ohřívá. Tento ohřev způspbí růst teploty v chatě konstantní rychlostí [`r`]. Napište matematický model, který kombinuje spojený učinek ochlazování podle předchozího bodu (teplota okolí zůstává [`[$T0]{}^\circ\mathrm{C}`]) a ohřevu konstantní rychlostí vlivem slunečních paprsků. 
 
     >> [``\frac{\mathrm dT}{\mathrm dt}=``][__________]{$r1->cmp()->withPostFilter(AnswerHints(Formula("r+k*(T-[$T0])") => "Jste na dobre ceste. Bud mate prehozene cleny v rozdilu, nebo neuvazujete, ze se chata ochlazuje.",Formula("r*k*(T-[$T0])") => "Jste na dobre ceste. Jenom musite zohlednit, ze rychlost neni umerna soucasne obema efektum, ale jejich souctu, resp. rozdilu.",Formula("-k*(T-[$T0])") => "Jste na dobre ceste. Jeste je potreba zohlednit konstantni intenzitu ohrevu."))}<<
 

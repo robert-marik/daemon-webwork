@@ -48,7 +48,7 @@ border:1px solid #333; }
 
 <h1>Příklady v systému WeBWorK na samostatné procvičování</h1>
 
-Kliknutím na nadpis pro skupinu příkladů otevřete příslušnou skupinu a poté si můžete vybrat příkad. Některé příklady znáte z domácích úloh, některé vznikly pro důkladnější procvičení ve zkouškovém, některé vznikly pro zařazení nových příkaldů do písemky.
+Kliknutím na nadpis pro skupinu příkladů otevřete příslušnou skupinu a poté si můžete vybrat příkad. Některé příklady znáte z domácích úloh, některé vznikly pro důkladnější procvičení ve zkouškovém, některé vznikly pro zařazení nových příkladů do písemky.
 
 <div id=\"accordion\">
 "
