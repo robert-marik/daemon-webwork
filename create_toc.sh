@@ -63,6 +63,7 @@ MYMAP[diferencialni_rovnice]="Diferencialni rovnice"
 MYMAP[difuzni_rce]="Difuzní rovnice"
 MYMAP[vlastni_cisla]="Vlastní čísla a vektory"
 MYMAP[precalculus]="Funkce"
+MYMAP[parcialni_derivace]="Parciální derivace"
 
 
 saveheader=""
