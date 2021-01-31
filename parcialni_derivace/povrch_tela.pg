@@ -103,7 +103,9 @@ END_PGML
 
 BEGIN_PGML_HINT
 
-Derivujte jako v předchozích příkladech: proměnné, podle kterých se nederivuje, se chovají jako konstanty. Nezapomeňte desetinné číslo zadávat s desetinnou tečkou.
+Derivujeme vlastně jenom konstantní násobek mocninné funkce. Násobek je složen ze dvou faktorů: z numerické konstanty před funkcí a z mocniny proměnné, přes kterou se nederivuje.
+
+Nezapomeňte desetinné číslo zadávat s desetinnou tečkou.
 
 END_PGML_HINT
 
