@@ -53,7 +53,7 @@ $radio    =  RadioButtons([[$od,@moznosti]],0);
 
 BEGIN_PGML
 
-## [$na]
+## Slovní interpretace gradientu
 
 
 [$ot]

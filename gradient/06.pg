@@ -30,11 +30,8 @@ $aproximace=Formula("$F+$A*(x-$x0)+$B*(y-$y0)")-> reduce();
 
 BEGIN_PGML
 
-## Lineární aproximace funkce dvou proměnných (pokr.)
+## Lineární aproximace funkce dvou proměnných
 
-Tento příklad je analogický příkladu předchozímu, ale gradient i funkční hodnotu si musíte vypočítat sami. Nezapomeňte, že nás zajímá gradient v zadaném bodě.
-
-------------------
 
 Najděte lineární aproximaci funkce [``` f(x,y)=[$funkce]```] v okolí bodu [`([$x0],[$y0])`].
 
@@ -45,7 +42,7 @@ END_PGML
 
 BEGIN_PGML_HINT
 
-Stačí vypočítat funkční hodnotu a obě derivace (tj. gradient) v bodě [`([$x0],[$y0])`] a postupovat jako v předchozím příkladě. Pro kontrolu:
+Stačí vypočítat funkční hodnotu a obě derivace (tj. gradient) v bodě [`([$x0],[$y0])`] a dosadit do vzorce. Pro kontrolu:
 
 [``` f([$x0],[$y0])=[$F]```]
 [``` \nabla f(x,y)=\begin{pmatrix}[$dfx]\\[$dfy]\end{pmatrix}```]
@@ -59,7 +56,7 @@ END_PGML_HINT
 BEGIN_PGML_SOLUTION
 
 
-Stačí vypočítat funkční hodnotu a obě derivace (tj. gradient) v bodě [`([$x0],[$y0])`] a postupovat jako v předchozím příkladě. 
+Stačí vypočítat funkční hodnotu a obě derivace (tj. gradient) v bodě [`([$x0],[$y0])`] a dosadit do vzorce. 
 
 [``` f([$x0],[$y0])=[$F]```]
 [``` \nabla f(x,y)=\begin{pmatrix}[$dfx]\\[$dfy]\end{pmatrix}```]
