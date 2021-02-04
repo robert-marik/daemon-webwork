@@ -65,7 +65,7 @@ Určete gradient teploty a odpovídající tok tepla.
 
 >> [``\vec q=-\lambda \nabla T ={}``][_________________]*{$ans2}<<
 
-_Zápis je stejý jako v předchozím příkladě. Nezapomeňte, že pokud uděláte chybu v jedné komponentě, bude vektor vyhodnocený jako celek a červeně tedy budou označeny obě komponenty._
+_Nezapomeňte, že pokud uděláte chybu v jedné komponentě, bude vektor vyhodnocený jako celek a červeně tedy budou označeny obě komponenty._
 
 END_PGML
 Context()->normalStrings;

@@ -319,26 +319,32 @@ BEGIN_PGML
     [@ DataTable(
 	   [
 	    [ " ",["\\( T(x,y)\\)", colspan => 10,headerrow=>1]],
-	    [["", midrule => 1,headerrow=>1],@x],
-	    [  $y[0], @{$TS[0]} ],
-	    [  $y[1], @{$TS[1]} ],
-	    [  $y[2], @{$TS[2]} ],
-	    [  $y[3], @{$TS[3]} ],
-	    [  $y[4], @{$TS[4]} ],
-	    [  $y[5], @{$TS[5]} ],
-	    [  $y[6], @{$TS[6]} ],
-	    [  $y[7], @{$TS[7]} ],
-	    [  $y[8], @{$TS[8]} ],
-	    [  $y[9], @{$TS[9]} ],
-	    [  $y[10], @{$TS[10]} ],
-	    [  $y[11], @{$TS[11]} ],
-	    [  $y[12], @{$TS[12]} ],
+	    [["\\(x\\)", midrule => 1,headerrow=>1],
+"\\(-30\\)", "\\(-25\\)", "\\(-20\\)", "\\(-15\\)", "\\(-10\\)", "\\(-5\\)", 
+"\\(0\\)",
+"\\(5\\)", "\\(10\\)", "\\(15\\)", "\\(20\\)", "\\(25\\)", "\\(30\\)", 
+],
+	    [  "\\(y=$y[0]\\)", @{$TS[0]} ],
+	    [  "\\(y=$y[1]\\)", @{$TS[1]} ],
+	    [  "\\(y=$y[2]\\)", @{$TS[2]} ],
+	    [  "\\(y=$y[3]\\)", @{$TS[3]} ],
+	    [  "\\(y=$y[4]\\)", @{$TS[4]} ],
+	    [  "\\(y=$y[5]\\)", @{$TS[5]} ],
+	    [  "\\(y=$y[6]\\)", @{$TS[6]} ],
+	    [  "\\(y=$y[7]\\)", @{$TS[7]} ],
+	    [  "\\(y=$y[8]\\)", @{$TS[8]} ],
+	    [  "\\(y=$y[9]\\)", @{$TS[9]} ],
+	    [  "\\(y=$y[10]\\)", @{$TS[10]} ],
+	    [  "\\(y=$y[11]\\)", @{$TS[11]} ],
+	    [  "\\(y=$y[12]\\)", @{$TS[12]} ],
 	   ], 
 	   caption => 'Teplota jako funkce dvou proměnných daná tabulkou',  rowheaders => 1  
      ); @]*
 
 
-Určete teplotu a parciální derivace (a tím vlastně i gradient) teploty v bodě [`(x_0,y_0)=([$x[$x0]],[$y[$y0]])`].
+Určete teplotu a parciální derivace (a tím vlastně i gradient) teploty v bodě [`(x_0,y_0)=([$x[$x0]],[$y[$y0]])`]. Hodnoty teplot v potřebných bodech odečtete v tabulce. Hodnoty [`x`] jsou v záhlaví sloupců a hodnoty [`y`] v záhlaví řádků. 
+
+Graf k ničemu nepotřebujete, ale můžete ho využít pro zběžnou kontrolu. V grafu nejsou hodnoty [`y`] shora dolů jako v tabulce, ale zdola nahoru, jak jsme zvyklí pro kartézské souřadnice.
 
 >> [`` T([$x[$x0]],[$y[$y0]])={} ``][_______________]{$teplota} <<
 
@@ -359,9 +365,6 @@ Parciální derivaci podle [`x`] určíme jako rychlost změny teploty mezi hodn
 
 Parciální derivaci podle [`y`] určíme jako rychlost změny teploty mezi hodnotami [`y`] o jedno pole v tabulce nahoru a dolů.
 [``` \frac{\partial T}{\partial y}([$x[$x0]],[$y[$y0]])=\frac{[$T[$y0+1][$x0]]-[$T[$y0-1][$x0]]}{2\times 5}=[$grady] ```]
-
-
-
 
 END_PGML_SOLUTION
 

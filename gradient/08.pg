@@ -42,7 +42,7 @@ BEGIN_PGML
 
 V materiálovém inženýrství Jacobiho  matice vystupuje s vypočtenými hodnotami parciálních derivací, aby v ní byly přímo koeficienty požadované linearizace funkce popisující materiální odezvu.
 
-V tomto příkladě se  vypočteme Jacobiho matici stejně dosadíme do matice bod, který je počátkem a vyjadřuje nulový materiálový podnět (například nulový gradient teploty, nebo nulový gradient koncentrace). 
+V tomto příkladě vypočteme Jacobiho matici stejně dosadíme do matice bod, který je počátkem a vyjadřuje nulový materiálový podnět (například nulový gradient teploty, nebo nulový gradient koncentrace). 
 
 Například pro vektorovou funkci [``` \vec F=(x^3-x+4y)\vec i + \sin (x)\vec j ```] má Jacobiho matice tvar
 [``` J(x,y) = \begin{pmatrix}3x^2-1 & 4 \\ \cos (x) & 0\end{pmatrix}```] a Jacobiho matice v nule je

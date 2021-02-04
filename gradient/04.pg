@@ -32,8 +32,7 @@ BEGIN_PGML
 
 ## Gradient funkce tří proměnných s parametrem
 
-V následujícím příkladě si zkusíme vypočítat gradient funkce tří proměnných s parametrem. Postupuje se stejně jako v předchozím příkladě, pouze máme navíc parametr, stejně jako v příkladě číslo 2.
-
+V následujícím příkladě si zkusíme vypočítat gradient funkce tří proměnných s parametrem. 
 
 ---------------
 
