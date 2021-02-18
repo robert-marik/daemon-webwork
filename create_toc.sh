@@ -65,10 +65,10 @@ MYMAP[vlastni_cisla]="Vlastní čísla a vektory"
 MYMAP[precalculus]="Funkce"
 MYMAP[parcialni_derivace]="Parciální derivace"
 MYMAP[gradient]="Gradient"
-
+MYMAP[krivkovy_integral]="Křivkový integrál"
 
 saveheader=""
-for j in precalculus derivace_vypocet derivace_pouziti integraly_vypocet integraly_pouziti diferencialni_rovnice vlastni_cisla parcialni_derivace gradient difuzni_rce
+for j in precalculus derivace_vypocet derivace_pouziti integraly_vypocet integraly_pouziti diferencialni_rovnice vlastni_cisla parcialni_derivace gradient difuzni_rce krivkovy_integral
 do
     echo "<h3>${MYMAP[$j]}</h3><div>"
     for i in `grep '^## ' $j/*.pg | sed 's/ /_/g'`
