@@ -337,7 +337,7 @@ if ($s[3]>0) {$sign3='záporný' ; $dir3='opačným'} else
 );
 
 BEGIN_PGML
-## Odhad křivkového integrálu po uzavřené cestě podle obrázku
+## Odhad křivkového integrálu po složené cestě
 
 Nyní rozšíříme předchozí příklad. Křivky jsou zpravidla z několika úseků. Na každém určíme, zda je křivkový integrál kladný, záporný nebo nulový a poté sečteme jednotlivé příspěvky. Opět platí, že
 
