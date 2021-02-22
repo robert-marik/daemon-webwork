@@ -42,9 +42,9 @@ yavoid=>0,
 $desc = "Graph of a constant vector field pointing horizontally to the " .
     "right.  ";
 
-## we pick from six curves; these are defined by
-##    [ startpt, endpt, labelloc, descr ]; in the array @curves, they appear
-##    in increasing magnitude of line integral.
+  ## we pick from six curves; these are defined by
+  ##    [ startpt, endpt, labelloc, descr ]; in the array @curves, they appear
+  ##    in increasing magnitude of line integral.
 @curves = ( [ [ 3.5, 0.2 ], [ 2, 0.2 ], [ 3, 0.35, 'left', 'bottom' ],
 	      'a horizontal line segment with a length 1.5, ' .
 	      'extending along the bottom of the graph from right to left' ],
@@ -66,7 +66,7 @@ $desc = "Graph of a constant vector field pointing horizontally to the " .
 	      'a horizontal line starting at the lower left of the graph ' .
 	      'and extending to the right 1.5 units.' ] );
 @pickem = NchooseK( scalar(@curves), 4 );
-## make sure we didn't get both of the curves with an integral of zero
+  ## make sure we didn't get both of the curves with an integral of zero
 $foundzero = 0;
 for ( my $i=0; $i<3; $i++ ) {
     if ( ( $pickem[$i] == 2 || $pickem[$i] == 3 ) && $foundzero ) {
@@ -77,12 +77,12 @@ for ( my $i=0; $i<3; $i++ ) {
     }
 }
 
-## the correct ordering of the integrals is that which takes the index
-##    pickem[i] from smallest to largest, so make an inverse mapping of
-##    pickem[i] => i
+  ## the correct ordering of the integrals is that which takes the index
+  ##    pickem[i] from smallest to largest, so make an inverse mapping of
+  ##    pickem[i] => i
 %invMap = ( );
 
-## add the curves to the graph
+  ## add the curves to the graph
 for ( my $i=0; $i<3; $i++ ) {
     $gr->moveTo( @{$curves[$pickem[$i]]->[0]} );
     $gr->lineTo( $curves[$pickem[$i]]->[1]->[0], $curves[$pickem[$i]]->[1]->[1],
@@ -107,7 +107,7 @@ for ( my $i=0; $i<3; $i++ ) {
     $desc .= "Curve C" . ($i+1) . " is " . $curves[$pickem[$i]]->[3] . ".  ";
 }
 
-## then the popups are
+  ## then the popups are
 @picked = num_sort( ($pickem[0], $pickem[1], $pickem[2]) );
 @intdesc = ( "?", "integral podel C1", "integral podel C2", "integral podel C3" );
 $int1 = PopUp( [ @intdesc ], $intdesc[$invMap{$picked[0]} + 1] );
