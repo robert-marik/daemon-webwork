@@ -50,9 +50,9 @@ foreach my $i (0..5) {
 $s[0] = random(-1,1,2);
 $orientace = random(-1,1,2);
 if ($orientace*$s[0] == 1) { 
-  $answer[0] = "záporný"; 
+  $answer[0] = "zaporny"; 
 } else { 
-  $answer[0] = "kladný"; 
+  $answer[0] = "kladny"; 
 }
 VectorField2D(
 graphobject => $gr[0],
@@ -84,7 +84,7 @@ $gr[0]->stamps( closed_circle(2,0,'red') );
 $s[1] = random(-1,1,2);
 if ($s[1]= -($s[0])) { $s[1]=-($s[1]); }
 $orientace = random(-1,1,2);
-$answer[1] = "nulový"; 
+$answer[1] = "nulovy"; 
 VectorField2D(
 graphobject => $gr[1],
 Fx => Formula("$s[1]*y"),
@@ -121,9 +121,9 @@ $gr[1]->stamps( closed_circle(0,3,'red') );
 $s[2] = random(-1,1,2);
 $orientace = random(-1,1,2);
 if ($orientace*$s[2]==1) {
-  $answer[2] = "kladný";
+  $answer[2] = "kladny";
 } else {
-  $answer[2] = "záporný";
+  $answer[2] = "zaporny";
 }
 VectorField2D(
 graphobject => $gr[2],
@@ -161,9 +161,9 @@ $gr[2]->stamps( closed_circle(0,-2,'red') );
 $s[3] = random(-1,1,2);
 $orientace = random(-1,1,2);
 if ($orientace*($s[3])==1) {
-  $answer[3] = "kladný";
+  $answer[3] = "kladny";
 } else {
-  $answer[3] = "záporný";
+  $answer[3] = "zaporny";
 }
 VectorField2D(
 graphobject => $gr[3],
@@ -199,9 +199,9 @@ $s[4] = random(-1,1,2);
 $orientace = random(-1,1,2);
 $znam[4] = random(-1,1,2);
 if ($orientace*$s[4]==1) {
-  $answer[4] = "záporný";
+  $answer[4] = "zaporny";
 } else {
-  $answer[4] = "kladný";
+  $answer[4] = "kladny";
 }
 VectorField2D(
 graphobject => $gr[4],
@@ -238,7 +238,7 @@ $x5=random(-1,1);
 if ($x5==0) {$y5=random(-1,1,2);} else {$y5=0;}
 $x5=3*$x5;
 $y5=3*$y5;
-$answer[5] = "nulový"; 
+$answer[5] = "nulovy"; 
 VectorField2D(
 graphobject => $gr[5],
 Fx => Formula("$s[5]*x"),
@@ -272,7 +272,7 @@ $gr[5]->stamps( closed_circle($x5,$y5,'red') );
 
 
 @perm = shuffle(6);
-@choices = ("?","Kladný","Záporný","Nulový");
+@choices = ("?","Kladny","Zaporny","Nulovy");
 
 foreach my $i (0..5) {
   $fig[$i] = image(insertGraph($gr[$i]),width=>200,height=>200,tex_size=>310);
