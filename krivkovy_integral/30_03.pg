@@ -278,8 +278,9 @@ if (($otocit)*($s[5])>0) {$sign5='kladný' ; $dir5='stejným'} else
 {$sign5='záporný'; $dir5= 'opačným'};
 
 
+foreach $i (0,1,2,3,4,5) { $answer[$i] =~ s/ý/y/; $answer[$i] =~ s/á/a/; }
 @perm = shuffle(6);
-@choices = ("?","Kladný","Záporný","Nulový");
+@choices = ("?","Kladny","Zaporny","Nulovy");
 
 foreach my $i (0..5) {
   $fig[$i] = image(insertGraph($gr[$i]),width=>200,height=>200,tex_size=>310);
@@ -339,7 +340,7 @@ END_TEXT
 install_problem_grader(~~&custom_problem_grader_fluid);
 $ENV{'grader_numright'} = [3,6];
 $ENV{'grader_scores'} = [0.5,1];
-$ENV{'grader_message'} = "Za 3 až pět správných odpovědí dostavate hodnocení 50%.";
+$ENV{'grader_message'} = "Za 3 az pet spravnych odpovedi dostavate hodnoceni 50%.";
 
 $showPartialCorrectAnswers = 0;
 
