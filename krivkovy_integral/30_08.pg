@@ -271,7 +271,7 @@ $gr[5]->stamps( closed_circle($x5,$y5,'red') );
 
 
 
-foreach $i (0,1,2,3) { $answer[$i] =~ s/ý/y/; $choices[$i] =~ s/á/a/; }
+foreach $i (0,1,2,3,4,5) { $answer[$i] =~ s/ý/y/; $choices[$i] =~ s/á/a/; }
 @perm = shuffle(6);
 @choices = ("?","Kladny","Zaporny","Nulovy");
 
