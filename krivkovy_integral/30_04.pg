@@ -378,7 +378,7 @@ END_TEXT
 install_problem_grader(~~&custom_problem_grader_fluid);
 $ENV{'grader_numright'} = [2,4];
 $ENV{'grader_scores'} = [0.5,1];
-$ENV{'grader_message'} = "Za 2 az 4 spravne odpovedi dostavate hodnoceni 50%.";
+$ENV{'grader_message'} = "Za 2 nebo 3 spravne odpovedi dostavate hodnoceni 50%.";
 
 $showPartialCorrectAnswers = 0;
 
