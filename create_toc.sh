@@ -14,6 +14,9 @@ echo "
   <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css\">
   <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.theme.min.css\">
 
+<link rel=\"stylesheet\" type=\"text/css\" href=\"/webwork2_files/js/vendor/bootstrap/css/bootstrap.css\"/>
+<link rel=\"stylesheet\" type=\"text/css\" href=\"/webwork2_files/js/vendor/bootstrap/css/bootstrap-responsive.css\"/>
+
   
 <style>
   h1, h2 {    text-align:center; }
@@ -37,15 +40,11 @@ a:before {content :\"•\";}
   
   </script>
 
-<style>
-  body{background-color: #A1D15B;}
-.ui-state-active {background-color: #0a5028; 
-border:1px solid #333; }
-</style>
 
 </head>
 <body>
 
+<div class='container'>
 <h1>Příklady v systému WeBWorK na samostatné procvičování</h1>
 
 Kliknutím na nadpis pro skupinu příkladů otevřete příslušnou skupinu a poté si můžete vybrat příkad. Některé příklady znáte z domácích úloh, některé vznikly pro důkladnější procvičení ve zkouškovém, některé vznikly pro zařazení nových příkladů do písemky.
@@ -80,6 +79,6 @@ do
     echo "</div>"
 done
 	 
-echo "</div></div>
+echo "</div></div></div>
 </html>
 </body>"
