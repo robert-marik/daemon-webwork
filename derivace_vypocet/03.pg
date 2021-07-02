@@ -28,7 +28,7 @@ $answer = Formula("($c)*($a)*($var)^($a-1)+($d)*($b)*($var)^($b-1)");   # deriva
 
 BEGIN_PGML
 
-## Derivace funkce proměnné [`[$var]`]
+## Derivace podle předepsané proměnné 
 
 Tento příklad je stejného typu jako příklad předchozí. Rozdíl je jenom v tom, že namísto proměnné [`x`] pracujeme s jinou proměnnou. Proto raději nebudeme derivaci označovat čárkou, ale pomocí diferenciálů (pomocí Leibnizovy notace). Postup je (až na tento detail v zápise) zcela totožný a odpověď bude funkcí proměnné [`[$var]`].
 
