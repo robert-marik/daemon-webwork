@@ -21,7 +21,7 @@ echo "
 <style>
   h1, h2 {    text-align:center; }
 
-  body {max-width:800px; margin:auto;}
+  body {margin:auto;}
 
 a {
   text-decoration: none;
