@@ -118,7 +118,6 @@ Context()->texStrings;
 TEXT(beginproblem());
 
 BEGIN_PGML
-Tento příklad navazuje na předchozí, ale ještě se přidává srovnání velikostí integrálů.
 
 ## Odhad uspořádání křivkových integrálů podle velikosti z obrázku
 
