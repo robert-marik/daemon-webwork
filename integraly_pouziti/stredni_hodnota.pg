@@ -50,8 +50,8 @@ Nyní zkusíme něco podobného s jinými hodnotami.
 Je dána funkce [`` [$funkce] ``] proměnné [`t`] s reálným parametrem [`a`]. Vypočtěte střední hodnotu této funkce na intervalu [`[[$a],[$b]]`].
 
 >>[``\frac1{[$b]-[$a]} \int_{[$a]}^{[$b]} [$funkce]\,\mathrm dt ={}``][_________________________]{$stredni->cmp()->withPostFilter(AnswerHints(
-Formula("$prim") => "Jste na dobré cestě. Toto je ale primitivní funkce. Ještě musíte vypočítat určitý integrál a střední hodnotu.",
-Formula("$int") => "Jste na dobré cestě. Toto je ale určitý integrál. Ještě musíte vypočítat střední hodnotu. Vydělte délkou intervalu."
+Formula("$prim") => "Jste na dobre ceste. Toto je ale primitivni funkce. Jeste musite vypocitat urcity integral a stredni hodnotu.",
+Formula("$int") => "Jste na dobre ceste. Toto je ale urcity integral. Jeste musite vypocitat stredni hodnotu. Vydelte delkou intervalu."
 ))
 } <<
 
