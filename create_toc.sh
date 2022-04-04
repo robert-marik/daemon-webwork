@@ -67,6 +67,7 @@ MYMAP[precalculus]="Funkce"
 MYMAP[parcialni_derivace]="Parciální derivace"
 MYMAP[gradient]="Gradient"
 MYMAP[krivkovy_integral]="Křivkový integrál"
+MYMAP[dvojny_integral]="Dvojný integrál"
 
 saveheader=""
 for j in precalculus derivace_vypocet derivace_pouziti integraly_vypocet integraly_pouziti diferencialni_rovnice vektory matice vlastni_cisla parcialni_derivace gradient difuzni_rce krivkovy_integral
