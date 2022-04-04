@@ -70,7 +70,7 @@ MYMAP[krivkovy_integral]="Křivkový integrál"
 MYMAP[dvojny_integral]="Dvojný integrál"
 
 saveheader=""
-for j in precalculus derivace_vypocet derivace_pouziti integraly_vypocet integraly_pouziti diferencialni_rovnice vektory matice vlastni_cisla parcialni_derivace gradient difuzni_rce krivkovy_integral
+for j in precalculus derivace_vypocet derivace_pouziti integraly_vypocet integraly_pouziti diferencialni_rovnice vektory matice vlastni_cisla parcialni_derivace gradient difuzni_rce dvojny_integral krivkovy_integral
 do
     echo "<h3>${MYMAP[$j]}</h3><div>"
     for i in `grep '^## ' $j/*.pg | sed 's/ /_/g'`
