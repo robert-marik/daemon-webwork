@@ -73,7 +73,7 @@ $radio=RadioButtons(["Stabilní uzel","Stabilní ohnisko","Nestabilní uzel","Ne
 
 BEGIN_PGML
 
-# Stacionární bod lineárního autonomního systému
+## Stacionární bod lineárního autonomního systému
 
 V této úloze si projdeme celou cestu, od lineárního autonomního systému, přes chrakteristický polynom až po klasifikaci stacionárního bodu na základě vlastních čísel. 
 

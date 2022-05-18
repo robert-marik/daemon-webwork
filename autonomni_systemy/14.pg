@@ -88,7 +88,7 @@ $radio=RadioButtons(["Stabilní uzel","Stabilní ohnisko","Nestabilní uzel","Ne
 
 BEGIN_PGML
 
-# Stacionární bod nelineárního autonomního systému
+## Stacionární bod nelineárního autonomního systému
 
 V této úloze si projdeme celou cestu, od aproximace nelineárního autonomního systému lineárním pomocí Jacobiho matice, přes chrakteristický polynom až po klasifikaci stacionárního bodu na základě vlastních čísel. 
 

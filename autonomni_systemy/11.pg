@@ -82,7 +82,7 @@ $radio=RadioButtons(["Stabilní uzel","Stabilní ohnisko","Nestabilní uzel","Ne
 
 BEGIN_PGML
 
-# Charakteristický polynom a vlastní čísla Jacobiho matice
+## Charakteristický polynom a vlastní čísla Jacobiho matice
 
 Nelineární autonomní systémy umíme v okolí stacionárního bodu nahradit systémem lineárním, u kterého je zaručeno stejné chování (ve smyslu stejného chování trajektorií v okolí těchto bodů). Tento systém je dán Jacobiho maticí. O chování řešení v okolí tohoto stacionárního bodu rozhodují vlastní čísla. Podle nich poznáme, za je stacionární bod stabilní či nestabilní. U stabilních bodů poznáme, zda rovnováha je dosažena monotonně, nebo pomocí postupně mizejících oscilací.
 
