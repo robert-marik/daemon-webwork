@@ -53,7 +53,7 @@ BEGIN_PGML
 
 ## Lichoběžníkové pravidlo
 
-Lichoběžníkové pravidlo je nejjednodušší způsob numerického odhadu integrálu. Geoemtricky se zakládá na tom, že při výpočtu integrálu [``` \int_a^b f(x)\,\mathrm{dx} ```] rozdělíme interval [`[a,b]`] na stejně dlouhé podintervaly, vypočteme funkční hodnoty v krajních bodech těchto podintervalů a aproximujeme funkci lomenou čarou, která v krajních bodech podintervalů nabývá stejných hodnot. Pro praktický výpočet používáme vzorec [``` \int_a^bf(x)\,\mathrm dx\approx \frac h2\Bigl(
+Lichoběžníkové pravidlo je nejjednodušší způsob numerického odhadu integrálu. Geoemtricky se zakládá na tom, že při výpočtu integrálu [``` \int_a^b f(x)\,\mathrm{d}x ```] rozdělíme interval [`[a,b]`] na stejně dlouhé podintervaly, vypočteme funkční hodnoty v krajních bodech těchto podintervalů a aproximujeme funkci lomenou čarou, která v krajních bodech podintervalů nabývá stejných hodnot. Pro praktický výpočet používáme vzorec [``` \int_a^bf(x)\,\mathrm dx\approx \frac h2\Bigl(
 {y_0}+2y_1+2y_2+\cdots+2y_{n-1}+{y_n}\Bigr),```]
 kde [`h`] je délka podintervalu a [`y_i`] jsou funkční body v krajních bodech podintervalů.
 
