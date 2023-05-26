@@ -29,7 +29,7 @@ BEGIN_PGML
 
 ## Derivace funkce s parametrem v exponentu
 
-Tento příklad je stejného typu jako příklad předchozí. Rozdíl je jenom v tom, že nyní máme parametr v exponentu. Protože musíme exponent při derivování snížit o jedničku, měl by být v odpovědi přítomen výraz [`[$par]-1`]. Tento výraz bude v exponentu a proto při zápise mocniny budete muset exponent dát do závorky.
+V tomto příkladě budeme derivovat polynom s mocninou ve fromě parametru. Výpočet je stejný jako s mocninou ve tvaru čísla, pouze roli čísla přebírá parametr. Protože musíme exponent při derivování snížit o jedničku, měl by být v odpovědi přítomen výraz [`[$par]-1`]. Tento výraz bude v exponentu a proto při zápise mocniny budete muset exponent dát do závorky.
 
 ------------
 
