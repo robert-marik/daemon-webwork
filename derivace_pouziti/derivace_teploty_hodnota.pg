@@ -1,0 +1,54 @@
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl",
+"MathObjects.pl",
+"parserRadioButtons.pl",
+"PGcourse.pl",
+"PGML.pl"
+);
+
+
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 0;
+$showHint = 1;
+ 
+$data =
+{
+otazka=>"Veličina \(T\) udává teplotu vody v závislosti na čase. Derivace je \[\frac {\mathrm dT}{\mathrm dt} = 20\,{}^\circ\mathrm{C}/\mathrm{min}.\] Co je možné z této informace vyčíst? Pokud je více možností, vyberte tu, která nese nejpodrobnější informace.",
+nadpis=>"Derivace teploty podle času",
+moznosti=>[
+"Teplota vody roste (okamžitou) rychlostí 20 stupňů Celsia za minutu.",
+"Teplota vody roste (okamžitou) rychlostí 20 stupňů Celsia za minutu. Za minutu bude teplota o 20 stupňů vyšší (pokud voda nedospěje k bodu varu).",
+"Teplota vody je menší než 80 stupňů Celsia a roste (okamžitou) rychlostí 20 stupňů Celsia za minutu.",
+"Teplota vody je větší než 20 stupňů Celsia a roste (okamžitou) rychlostí 20 stupňů Celsia za minutu.",
+"Teplota vody je 20 stupňů Celsia a do tohoto stavu se ohřívala přibližně minutu.",
+],
+vysvetleni=>"Teplota vody roste (okamžitou) rychlostí 20 stupňů Celsia za minutu.$PAR Derivace teploty vody podle času vyjadřuje okamžitou rychlost, jak rychle roste teplota vody. Tedy jaká je změna za jednotku času v daném okamžiku. Nic více. $PAR Zejména je dobré si uvědomit následující:
+$BR 1) Není možné říci, jaká bude teplota za minutu, protože není jisté, že během minuty se rychlost nezmění. 
+$BR 2) Není možné ani říci, jaká teplota je, jestli nízká nebo vysoká. 
+$BR 3) V derivaci je informace o změnách funkčních hodnot, o hodnotách samotných derivace informaci nenese. 
+$BR 4) Rychlostí dvacet stupňů Celsia za minutu se může ohřívat studená i horká voda. 
+$BR 5) Dokonce se touto rychlostí může ohřívat i voda těsně před varem, protože se jedná o rychlost okamžitou a celý proces nemusí trvat celou minutu."}
+;
+
+$radio    =  RadioButtons([$data->{moznosti}],0);
+
+BEGIN_PGML
+
+## [$data->{nadpis}]
+
+[$data->{otazka}]*
+
+[_]{$radio}
+
+END_PGML
+
+BEGIN_PGML_SOLUTION
+
+[$data->{vysvetleni}]*
+
+END_PGML_SOLUTION
+
+ENDDOCUMENT();
+

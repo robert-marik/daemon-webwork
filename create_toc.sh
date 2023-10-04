@@ -1,14 +1,14 @@
 echo "
 
-<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">
-<html xmlns=\"http://www.w3.org/1999/xhtml\">
+<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">
+<html xmlns=\"https://www.w3.org/1999/xhtml\">
 <head>
   <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />
   <meta http-equiv=\"Content-Style-Type\" content=\"text/css\" />
   <meta name=\"generator\" content=\"pandoc\" />
   <meta name=\"author\" content=\"Robert Mařík\" />
   <style type=\"text/css\">code{white-space: pre;} body {  font-family: \"Open Sans\", Sans-Serif;}</style>
-  <script src=\"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\" type=\"text/javascript\"></script>
+  <script src=\"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\" type=\"text/javascript\"></script>
 
 
   <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css\">
@@ -21,7 +21,7 @@ echo "
 <style>
   h1, h2 {    text-align:center; }
 
-  body {margin:auto;}
+  body {margin:auto; max-width:1000px;}
 
 a {
   text-decoration: none;
@@ -78,7 +78,7 @@ do
     do
 	file=`echo $i| cut -d: -f1`
 	title=`echo $i | cut -d# -f3 | sed 's/_/ /g'`
-	echo "<a href='http://um.mendelu.cz/webwork2/html2xml?&answersSubmitted=0&sourceFilePath=problems/$file&problemSeed=123&displayMode=MathJax&courseID=daemon&userID=demon&course_password=demonek&outputformat=simpleM&language=cs_CZ' open='ww-procvicovani'>$title</a>"
+	echo "<a href='https://um.mendelu.cz/webwork2/html2xml?&answersSubmitted=0&sourceFilePath=problems/$file&problemSeed=123&displayMode=MathJax&courseID=daemon&userID=demon&course_password=demonek&outputformat=simpleM&language=cs_CZ&showSolutions=1' open='ww-procvicovani'>$title</a>"
     done
     echo "</div>"
 done
